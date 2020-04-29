@@ -1,19 +1,43 @@
-import React, { Component } from 'react';
-import '../App.css';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import React, { useState } from 'react';
+import {
+	Collapse,
+	Navbar,
+	NavbarToggler,
+	NavbarBrand,
+	Nav,
+	NavItem,
+	NavLink,
+} from 'reactstrap';
+import Logo from '../components/arrowcircle.png';
 
-class Nav extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar dark color='primary'>
-					<div className='container'>
-						<NavbarBrand href='/'>Panorama</NavbarBrand>
-					</div>
-				</Navbar>
-      </div>
-    )
-  }
-}
+const Navigation = (props) => {
+	const [collapsed, setCollapsed] = useState(true);
 
-export default Nav;
+	const toggleNavbar = () => setCollapsed(!collapsed);
+
+	return (
+		<div>
+			<Navbar expand='sm'>
+				<NavbarBrand href='/' className='mr-auto brand'>
+					<img height='30' src={Logo} /> Panorama
+				</NavbarBrand>
+				<NavbarToggler onClick={toggleNavbar} className='mr-2' />
+				<Collapse isOpen={!collapsed} navbar>
+					<Nav navbar>
+						<NavItem>
+							<NavLink href='/'>Dashboard</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href='/'>Employees</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href='/'>Reviews</NavLink>
+						</NavItem>
+					</Nav>
+				</Collapse>
+			</Navbar>
+		</div>
+	);
+};
+
+export default Navigation;
