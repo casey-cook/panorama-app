@@ -10,6 +10,7 @@ import {
 } from 'reactstrap';
 import Logo from '../components/arrowcircle.png';
 
+
 const Navigation = (props) => {
 	const [collapsed, setCollapsed] = useState(true);
 
@@ -19,7 +20,7 @@ const Navigation = (props) => {
 		<div>
 			<Navbar expand='sm'>
 				<NavbarBrand href='/' className='mr-auto brand'>
-					<img height='30' src={Logo} /> Panorama
+					<img className='logo' height='25' src={Logo} alt='logo' /> Panorama
 				</NavbarBrand>
 				<NavbarToggler onClick={toggleNavbar} className='mr-2' />
 				<Collapse isOpen={!collapsed} navbar>
