@@ -8,7 +8,7 @@ import {
 	NavItem,
 	NavLink,
 } from 'reactstrap';
-import Logo from '../components/arrowcircle.png';
+import Logo from '../img/arrowcircle.png';
 
 const Navigation = (props) => {
 	const [collapsed, setCollapsed] = useState(true);

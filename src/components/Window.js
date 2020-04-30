@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Alert from '../components/alert.png';
-import Calendar from '../components/calendar.png';
+import Alert from '../img/alert.png';
+import Calendar from '../img/calendar.png';
 
 const windowStyle = {
 	minHeight: 155,
@@ -24,6 +24,10 @@ const welcomeContent = {
 	color: '#126872',
 };
 
+const img = {
+  verticalAlign: 'middle',
+}
+
 class Window extends Component {
 	render() {
 		return (
@@ -32,18 +36,20 @@ class Window extends Component {
 					<p className='wHeading p-2 mb-0'>Welcome back, Casey!</p>
 				</div>
 				<div style={welcomeContent} className='m-3'>
-					<div className='pt-2'>
-						<span>
-							<img className='pl-4' height='20' src={Alert} alt='alert' />
-						</span>
-						<span className='pl-3 mb-0 pt-2'>0 Past Due Reviews</span>
-					</div>
-					<div className='pt-2'>
-						<span>
-							<img className='pl-4' height='20' src={Calendar} alt='alert' />
-						</span>
-						<span className='pl-3 mb-0 pt-2'>1 Review Due This Week</span>
-					</div>
+          <div className="container">
+            <div display='flex' className='row pt-2'>
+              <div className='col-1'>
+                <img className='pb-1' height='24' src={Alert} alt='alert' />
+              </div>
+              <div className='col-9'>0 Past Due Reviews</div>
+            </div>
+            <div className='row pt-2'>
+              <div className='col-1'>
+                <img className='pb-1' height='24' src={Calendar} alt='alert' />
+              </div>
+              <div className='col-9'>1 Review Due This Week</div>
+            </div>
+          </div>
 				</div>
 			</div>
 		);
