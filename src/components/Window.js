@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Alert from '../img/alert.png';
-import Calendar from '../img/calendar.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 const windowStyle = {
 	minHeight: 155,
@@ -24,10 +25,6 @@ const welcomeContent = {
 	color: '#126872',
 };
 
-const img = {
-  verticalAlign: 'middle',
-}
-
 class Window extends Component {
 	render() {
 		return (
@@ -39,13 +36,13 @@ class Window extends Component {
           <div className="container">
             <div display='flex' className='row pt-2'>
               <div className='col-1'>
-                <img className='pb-1' height='24' src={Alert} alt='alert' />
+                <FontAwesomeIcon icon={faExclamationCircle} style={{ color: '#126872' }} />
               </div>
               <div className='col-9'>0 Past Due Reviews</div>
             </div>
             <div className='row pt-2'>
               <div className='col-1'>
-                <img className='pb-1' height='24' src={Calendar} alt='alert' />
+              <FontAwesomeIcon icon={faCalendarAlt} style={{ color: '#126872' }} />
               </div>
               <div className='col-9'>1 Review Due This Week</div>
             </div>
