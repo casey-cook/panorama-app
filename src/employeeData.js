@@ -4,7 +4,7 @@ export const EMPLOYEES = [
 	{
 		id: 0,
     name: 'Sandy Jimenez',
-    photo: 'https://i.ibb.co/HNcXpGn/sandyphoto.png',
+    photo: 'assets/img/sandyphoto.png',
 		totalScore: 4.5,
 		performanceAreas: {
 			0: 'Customer Service',
@@ -45,7 +45,7 @@ export const EMPLOYEES = [
 	{
 		id: 1,
     name: 'Charles Jones',
-    photo: 'https://i.ibb.co/RDP64WK/charlesphoto.png',
+    photo: 'assets/img/charlesphoto.png',
 		totalScore: 4.8,
 		performanceAreas: {
 			0: 'Customer Service',
@@ -85,7 +85,7 @@ export const EMPLOYEES = [
   {
 		id: 1,
     name: 'Ashton Reece',
-    photo: 'https://i.ibb.co/1qTVhzd/ashtonphoto.png',
+    photo: 'assets/img/ashtonphoto.png',
 		totalScore: 3.7,
 		performanceAreas: {
 			0: 'Customer Service',
@@ -125,7 +125,7 @@ export const EMPLOYEES = [
   {
 		id: 1,
     name: 'Vinnie Williams',
-    photo: 'https://i.ibb.co/ZHRXHrH/vinniephoto.png',
+    photo: 'assets/img/vinniephoto.png',
 		totalScore: 4.3,
 		performanceAreas: {
 			0: 'Customer Service',
