@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { EMPLOYEES } from '../draft';
+import { EMPLOYEES } from '../employeeData';
 import Navigation from './Nav'
 import Window from './Window';
+import EmpSnapshot from './EmpSnapshot';
 
 class Main extends Component {
 
@@ -18,6 +19,7 @@ class Main extends Component {
       <div>
         <Navigation />
         <Window />
+        <EmpSnapshot employees={this.state.employees} />
       </div>
     )
   }
