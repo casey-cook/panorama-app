@@ -42,7 +42,7 @@ function RenderTeamAverage({employees}) {
     employees.map(employee=> (
       total += employee.totalScore
     ))
-    return (Math.round(total / employees.length).toFixed(1));
+    return (total / employees.length).toFixed(1);
     }
 
 
