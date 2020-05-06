@@ -1,5 +1,3 @@
-// Data Structure Rough Draft
-
 export const EMPLOYEES = [
 	{
 		id: 0,

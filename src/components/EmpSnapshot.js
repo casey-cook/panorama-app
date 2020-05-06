@@ -1,5 +1,4 @@
 import React from 'react';
-import { EMPLOYEES } from '../employeeData';
 
 const windowStyle = {
 	minHeight: 355,
@@ -35,8 +34,8 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
-function RenderEmployeeList() {
-	return EMPLOYEES.map((employee) => (
+function RenderEmployeeList({employees}) {
+	return employees.map((employee) => (
 		<div style={empRowStyle} className='row pt-2 pb-2 mb-3'>
 			<div className='col-1'>
 				<img
@@ -56,6 +55,7 @@ function RenderEmployeeList() {
 }
 
 function EmpSnapshot(props) {
+
 	return (
 		<div style={windowStyle} className='m-4'>
 			<div style={headingStyle}>
@@ -63,7 +63,7 @@ function EmpSnapshot(props) {
 			</div>
 			<div className='m-3'>
 				<div className='container'>
-					<RenderEmployeeList />
+					<RenderEmployeeList employees={props.employees} />
 				</div>
 			</div>
 		</div>
