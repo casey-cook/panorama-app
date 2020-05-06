@@ -3,6 +3,7 @@ import { EMPLOYEES } from '../employeeData';
 import Navigation from './Nav'
 import Window from './Window';
 import EmpSnapshot from './EmpSnapshot';
+import TeamAverage from './TeamAverage';
 
 class Main extends Component {
 
@@ -17,9 +18,24 @@ class Main extends Component {
   render() {
     return (
       <div>
+        
         <Navigation />
-        <Window />
-        <EmpSnapshot employees={this.state.employees} />
+        <div className='conatiner'>
+          <div className="row">
+            <div className="col">
+              <Window />
+            </div>
+            <div className="col">
+              <TeamAverage employees={this.state.employees} />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <EmpSnapshot employees={this.state.employees} />
+            </div>
+          </div>
+        </div>
+        
       </div>
     )
   }
