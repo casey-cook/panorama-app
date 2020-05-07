@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { EMPLOYEES } from '../employeeData';
+import { EMPLOYEES } from '../shared/employeeData';
 import Navigation from './Nav'
 import Window from './Window';
 import EmpSnapshot from './EmpSnapshot';
 import TeamAverage from './TeamAverage';
+import UpcomingReviews from './UpcomingReviews';
 
 class Main extends Component {
 
@@ -32,6 +33,9 @@ class Main extends Component {
           <div className="row">
             <div className="col">
               <EmpSnapshot employees={this.state.employees} />
+            </div>
+            <div className="col">
+              <UpcomingReviews employees={this.state.employees} />
             </div>
           </div>
         </div>
