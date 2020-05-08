@@ -6,10 +6,10 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
+import {NavLink} from 'react-router-dom';
 
 const Navigation = (props) => {
 	const [collapsed, setCollapsed] = useState(true);
@@ -27,13 +27,13 @@ const Navigation = (props) => {
 				<Collapse isOpen={!collapsed} navbar>
 					<Nav>
 						<NavItem>
-							<NavLink href='/'>Dashboard</NavLink>
+							<NavLink className='nav-link' to='/dashboard'>Dashboard</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/'>Employees</NavLink>
+							<NavLink className='nav-link' to='/employees'>Employees</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href='/'>Reviews</NavLink>
+							<NavLink className='nav-link' to='/reviews'>Reviews</NavLink>
 						</NavItem>
 					</Nav>
 				</Collapse>
