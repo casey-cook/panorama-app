@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { EMPLOYEES } from '../shared/employeeData';
 import Navigation from './Nav'
-import Window from './Window';
+import WelcomeDash from './WelcomeDash';
 import EmpSnapshot from './EmpSnapshot';
 import TeamAverage from './TeamAverage';
 import UpcomingReviews from './UpcomingReviews';
 
-class Main extends Component {
+class Dashboard extends Component {
 
   constructor(props) {
 		super(props);
@@ -23,7 +23,7 @@ class Main extends Component {
         <div className='container'>
           <div className="row">
             <div className="col">
-              <Window />
+              <WelcomeDash />
             </div>
             <div className="col">
               <TeamAverage employees={this.state.employees} />
@@ -43,4 +43,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Dashboard;

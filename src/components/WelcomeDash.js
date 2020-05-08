@@ -26,7 +26,7 @@ const welcomeContent = {
 	color: '#126872',
 };
 
-class Window extends Component {
+class WelcomeDash extends Component {
 	render() {
 		return (
 			<div style={windowStyle} className='mt-4 ml-4'>
@@ -54,4 +54,4 @@ class Window extends Component {
 	}
 }
 
-export default Window;
+export default WelcomeDash;
