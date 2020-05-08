@@ -6,7 +6,8 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 const windowStyle = {
 	minHeight: 155,
 	backgroundColor: '#81ecc9',
-	maxWidth: 400,
+  maxWidth: 400,
+  minWidth: 400,
 	borderRadius: 6,
 };
 
@@ -28,13 +29,13 @@ const welcomeContent = {
 class Window extends Component {
 	render() {
 		return (
-			<div style={windowStyle} className='m-4'>
+			<div style={windowStyle} className='mt-4 ml-4'>
 				<div style={headingStyle}>
 					<p className='wHeading p-2 mb-0'>Welcome back, Casey!</p>
 				</div>
 				<div style={welcomeContent} className='m-3'>
           <div className="container">
-            <div display='flex' className='row pt-2'>
+            <div className='row pt-2'>
               <div className='col-1'>
                 <FontAwesomeIcon icon={faExclamationCircle} style={{ color: '#126872' }} />
               </div>

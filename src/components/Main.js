@@ -18,10 +18,9 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-        
+      <React.Fragment>
         <Navigation />
-        <div className='conatiner'>
+        <div className='container'>
           <div className="row">
             <div className="col">
               <Window />
@@ -39,8 +38,7 @@ class Main extends Component {
             </div>
           </div>
         </div>
-        
-      </div>
+      </React.Fragment>
     )
   }
 }

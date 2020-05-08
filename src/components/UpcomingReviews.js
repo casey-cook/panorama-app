@@ -3,7 +3,8 @@ import React from 'react';
 const windowStyle = {
 	minHeight: 355,
 	backgroundColor: '#81ecc9',
-	maxWidth: 400,
+  maxWidth: 400,
+  minWidth: 400,
 	borderRadius: 6,
 };
 
@@ -15,14 +16,10 @@ const headingStyle = {
 
 const empRowStyle = {
 	backgroundColor: '#d0fdf9',
-	minWidth: 100,
+  minWidth: 100,
 	borderRadius: 6,
 	boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
 	color: '#126872',
-};
-
-const imageStyle = {
-	borderRadius: 50,
 };
 
 const scoreStyle = {
@@ -33,6 +30,10 @@ const scoreStyle = {
 	color: 'white',
 	fontSize: '.9em',
 };
+
+const reviewName = {
+  textAlign: 'right',
+}
 
 function RenderReviewDate({employee}) {
 
@@ -54,10 +55,10 @@ function RenderReviewList({employees}) {
 	return employees.map((employee) => (
     
 		<div style={empRowStyle} className='row pt-2 pb-2 mb-3'>
-			<div className='col-1 my-auto'>
+			<div className='col-1'>
 				<RenderReviewDate employee={employee}/>
 			</div>
-			<div className='col-6 ml-5 pl-5 my-auto'>{employee.name}</div>
+			<div style={reviewName} className='col-9'>{employee.name}</div>
 		</div>
   ));
 
@@ -66,7 +67,7 @@ function RenderReviewList({employees}) {
 function UpcomingReviews(props) {
 
 	return (
-		<div style={windowStyle} className='m-4'>
+		<div style={windowStyle} className='ml-4'>
 			<div style={headingStyle}>
 				<p className='wHeading p-2 mb-0'>Upcoming Reviews</p>
 			</div>

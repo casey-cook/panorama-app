@@ -4,7 +4,8 @@ import moment from 'moment';
 const windowStyle = {
 	minHeight: 155,
 	backgroundColor: '#81ecc9',
-	maxWidth: 400,
+  maxWidth: 400,
+  minWidth: 400,
 	borderRadius: 6,
 };
 

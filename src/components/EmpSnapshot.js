@@ -3,7 +3,8 @@ import React from 'react';
 const windowStyle = {
 	minHeight: 355,
 	backgroundColor: '#81ecc9',
-	maxWidth: 400,
+  maxWidth: 400,
+  minWidth: 400,
 	borderRadius: 6,
 };
 
@@ -57,7 +58,7 @@ function RenderEmployeeList({employees}) {
 function EmpSnapshot(props) {
 
 	return (
-		<div style={windowStyle} className='m-4'>
+		<div style={windowStyle} className='ml-4 mb-4'>
 			<div style={headingStyle}>
 				<p className='wHeading p-2 mb-0'>Employee Snapshot</p>
 			</div>
