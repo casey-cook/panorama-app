@@ -36,8 +36,12 @@ const scoreStyle = {
 };
 
 function RenderEmployeeList({employees}) {
+  //Todo: use logic below to calculate real average
+  // calculateAverageScore(employee), map thru score and average, insert on line 56
+  
+
 	return employees.map((employee) => (
-		<div style={empRowStyle} className='row pt-2 pb-2 mb-3'>
+		<div key={employee.id} style={empRowStyle} className='row pt-2 pb-2 mb-3'>
 			<div className='col-1'>
 				<img
 					style={imageStyle}

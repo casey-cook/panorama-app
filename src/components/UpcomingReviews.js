@@ -22,18 +22,6 @@ const empRowStyle = {
 	color: '#126872',
 };
 
-const scoreStyle = {
-	borderRadius: '50%',
-	backgroundColor: '#0b877d',
-	minWidth: 25,
-	minHeight: 30,
-	color: 'white',
-	fontSize: '.9em',
-};
-
-const reviewName = {
-  textAlign: 'right',
-}
 
 function RenderReviewDate({employee}) {
 
@@ -43,25 +31,42 @@ function RenderReviewDate({employee}) {
       return (
         review.date.month + '/' + review.date.day
       )
-      }
+      } else return 'x'
     })
   )
 }
 
 
-
 function RenderReviewList({employees}) {
   
-	return employees.map((employee) => (
+  // let employeesWithReviews = employees.map(employee=>employee.reviews.filter(review => !review.complete))
+  // let newArr = employeesWithReviews.filter(arr=> arr.length != 0)
+  // console.log(newArr)
+
+  //need to create a new array of objects to pass the return statement below
+  //want to map through objects that only have a review with complete=false 
+  
+  //This did not work, returned empty array for ashton since we are mapping through each employee:
+  // employees.forEach(employee=>{
+  //   let reviewsTbc = employee.reviews.filter(review => !review.complete)
+  //   console.log(reviewsTbc)
+  // })
+  
+  return employees.map((employee) => {
+  
+
+    return (
     
-		<div style={empRowStyle} className='row pt-2 pb-2 mb-3'>
-			<div className='col-1'>
+		<div key={employee.id} style={empRowStyle} className='row pt-2 pb-2 mb-3'>
+			<div className='col-4'>
 				<RenderReviewDate employee={employee}/>
 			</div>
-			<div style={reviewName} className='col-9'>{employee.name}</div>
+      <div className='col-6'>
+				{employee.name}
+			</div>
 		</div>
-  ));
-
+  )});
+    
 }
 
 function UpcomingReviews(props) {

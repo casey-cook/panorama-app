@@ -7,7 +7,7 @@ export const EMPLOYEES = [
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
-			3: 'Cash Handling',
+			2: 'Cash Handling',
 		},
 		reviews: [
 			{
@@ -63,7 +63,7 @@ export const EMPLOYEES = [
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
-			3: 'Cash Handling',
+			2: 'Cash Handling',
 		},
 		reviews: [
 			{
@@ -111,14 +111,14 @@ export const EMPLOYEES = [
 		],
   },
   {
-		id: 1,
+		id: 2,
     name: 'Ashton Reece',
     photo: 'assets/img/ashtonphoto.png',
 		totalScore: 3.7,
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
-			3: 'Cash Handling',
+		  2: 'Cash Handling',
     },
 		reviews: [
 			{
@@ -153,7 +153,7 @@ export const EMPLOYEES = [
 				id: 2,
 				date: {
           year: '2020',
-          month: '02',
+          month: '07',
           day: '06'
         },
 				scores: {
@@ -166,14 +166,14 @@ export const EMPLOYEES = [
 		],
   },
   {
-		id: 1,
+		id: 3,
     name: 'Vinnie Williams',
     photo: 'assets/img/vinniephoto.png',
 		totalScore: 4.3,
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
-			3: 'Cash Handling',
+			2: 'Cash Handling',
 		},
 		reviews: [
 			{
