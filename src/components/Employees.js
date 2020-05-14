@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Navigation from './Nav';
-import { Link, Switch, Route } from 'react-router-dom';
-import WelcomeDash from './WelcomeDash';
 
 const windowStyle = {
 	minHeight: 155,
@@ -66,7 +64,6 @@ const imageStyle = {
 };
 
 function RenderEmployeeAverage(employee) {
-	console.log(employee);
 	return <div>TEST</div>;
 	// return employee.totalScore
 }
@@ -80,7 +77,7 @@ function EmployeeAverage({ employees }) {
 						<p className='wHeading pt-3'>Employee Average</p>
 					</div>
 					<div className='col-2 my-2 pt-2' style={avgStyle}>
-						<RenderEmployeeAverage />
+						TEST
 					</div>
 				</div>
 			</div>
@@ -95,8 +92,19 @@ function EmployeeAverage({ employees }) {
 	);
 }
 
+function renderInfo(employee){
+  console.log(employee)
+  return (
+    <RenderEmployeeAverage employee={employee} />
+  )
+
+}
+
+//Employee Select Window
 function EmployeeSelect(props) {
-  
+
+
+  //Renders the list of employees
 	function RenderEmployeeList({ employees }) {
     
     function changeBackground(e) {
@@ -109,12 +117,12 @@ function EmployeeSelect(props) {
 			e.target.style.color = '#126872';
 		}
 
-		return employees.map((employee) => (
-      <Link to={`employees/${employee.id}`}>
+		return employees.map((employee, index) => (
         <div
+          onClick={employee=>renderInfo(props.employees[index])}
+          //returning a class for some reason?
           className='row pt-2 pb-2 mb-3'
           style={empRowStyle}
-          onClick={(employee) => RenderEmployeeAverage(employee)}
           onMouseEnter={changeBackground}
           onMouseLeave={revertBackground}
         >
@@ -129,7 +137,6 @@ function EmployeeSelect(props) {
           </div>
           <div className='ml-1 col-6 my-auto'>{employee.name}</div>
         </div>
-      </Link>
 		));
 	}
 
@@ -148,6 +155,7 @@ function EmployeeSelect(props) {
 }
 
 class Employees extends Component {
+  
 	render() {
 		return (
 			<React.Fragment>
@@ -155,11 +163,11 @@ class Employees extends Component {
           <div className='container'>
             <div className='row'>
               <div className='col'>
-                {/* <div className='row' id='employeeAverage'>
+                <div className='row' id='employeeAverage'>
                   <div className='col'>
                     <EmployeeAverage employees={this.props.employees} />
                   </div>
-                </div> */}
+                </div>
                 <div className='row' id='employeeSelect'>
                   <div className='col'>
                     <EmployeeSelect employees={this.props.employees} />
@@ -168,16 +176,11 @@ class Employees extends Component {
               </div>
             </div>
           </div>
-          <Switch>
-            <Route
-              exact
-              path={'employees/1'}
-              component = {WelcomeDash}
-            />
-          </Switch>
+         
 			</React.Fragment>
 		);
-	}
+  }
+
 }
 
 export default Employees;
