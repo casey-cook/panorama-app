@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { EMPLOYEES } from '../shared/employeeData';
-import Dashboard from './Dashboard';
-import Employees from './Employees';
-import Reviews from './Reviews';
-import WelcomeDash from './WelcomeDash';
+import { EMPLOYEES } from '../../shared/employeeData';
+import Dashboard from '../Dashboard/index';
+import Employees from '../Employees/index';
+import Reviews from '../Reviews/index';
+import EmployeeInfo from '../EmployeeInfo/index';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
@@ -14,9 +14,17 @@ class MainComponent extends Component {
 		this.state = {
 			employees: EMPLOYEES,
 		};
-	}
+  }
+  
+  
   
   render() {
+
+  const EmployeeWithId = ({match}) => {
+    return (
+      <EmployeeInfo employee={this.state.employees.filter(employee => employee.id === +match.params.employeeId)[0]} />
+    )
+  }
 
   return <div>
           <Switch >
@@ -38,8 +46,8 @@ class MainComponent extends Component {
 					  />
             <Route
               exact
-              path={'employees/:1'}
-              component = {WelcomeDash}
+              path={'/employees/:employeeId'}
+              component={EmployeeWithId}
             />
             
             

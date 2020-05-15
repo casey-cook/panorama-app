@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigation from './Nav';
+import Navigation from '../Nav/index';
 
 class Reviews extends Component {
 

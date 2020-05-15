@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Navigation from './Nav'
-import WelcomeDash from './WelcomeDash';
-import EmpSnapshot from './EmpSnapshot';
-import TeamAverage from './TeamAverage';
-import UpcomingReviews from './UpcomingReviews';
+import Navigation from '../Nav/index'
+import WelcomeDash from '../WelcomeDash/index';
+import EmpSnapshot from '../EmpSnapshot/index';
+import TeamAverage from '../TeamAverage/index';
+import UpcomingReviews from '../UpcomingReviews/index';
 
 class Dashboard extends Component {
 

@@ -35,7 +35,7 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
-function RenderEmployeeList({employees}) {
+function EmployeeList({employees}) {
   //Todo: use logic below to calculate real average
   // calculateAverageScore(employee), map thru score and average, insert on line 56
   
@@ -68,7 +68,7 @@ function EmpSnapshot(props) {
 			</div>
 			<div className='m-3'>
 				<div className='container'>
-					<RenderEmployeeList employees={props.employees} />
+					<EmployeeList employees={props.employees} />
 				</div>
 			</div>
 		</div>
