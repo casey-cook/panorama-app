@@ -19,3 +19,17 @@
   font-weight: 300;
   color: white;
 }
+
+.breadcrumb {
+  background-color: #88F9D4;
+}
+
+.breadcrumb-item a {
+  color: #01403a;
+}
+
+@media screen and (max-width: 992px) {
+  .imgStyle {
+    display: none;
+  }
+}

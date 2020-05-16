@@ -39,21 +39,8 @@ function RenderReviewDate({employee}) {
 
 function RenderReviewList({employees}) {
   
-  // let employeesWithReviews = employees.map(employee=>employee.reviews.filter(review => !review.complete))
-  // let newArr = employeesWithReviews.filter(arr=> arr.length != 0)
-  // console.log(newArr)
-
-  //need to create a new array of objects to pass the return statement below
-  //want to map through objects that only have a review with complete=false 
-  
-  //This did not work, returned empty array for ashton since we are mapping through each employee:
-  // employees.forEach(employee=>{
-  //   let reviewsTbc = employee.reviews.filter(review => !review.complete)
-  //   console.log(reviewsTbc)
-  // })
   
   return employees.map((employee) => {
-  
 
     return (
     

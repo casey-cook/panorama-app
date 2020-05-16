@@ -1,16 +1,46 @@
 import React from 'react';
 import EmployeeeAverage from '../EmployeeAverage/index';
+import Nav from '../Nav/index'
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import EmployeePerformance from '../EmployeePerformance/index';
+import EmployeeInfoReviews from '../EmployeeInfoReviews/index';
 
 
 //TBD
-//Will render the following three components eventually:
-// 1- Employee Average - (Do Now)
 // 2- Employee Performance - (Do Now)
 // 3- Upcoming Reviews - (Do Later)
 
 function EmployeeInfo(props) {
   return(
-    <EmployeeeAverage employee={props.employee} />
+    <React.Fragment>
+      <Nav />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <Breadcrumb>
+              <BreadcrumbItem><Link to='/employees'>Employees</Link></BreadcrumbItem>
+              <BreadcrumbItem active>{`${props.employee.name}`}</BreadcrumbItem>
+            </Breadcrumb>
+          </div>
+        </div>
+        
+        <div className="row">
+          <div className="col">
+            <EmployeeeAverage employee={props.employee} />
+            <EmployeeInfoReviews employee={props.employee} />
+          </div>
+          <div className="col mb-4">
+            <EmployeePerformance employee={props.employee} />
+          </div>
+        </div>
+      </div>
+
+        
+        
+     
+      
+    </React.Fragment>
   )
 }
 

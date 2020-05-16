@@ -8,6 +8,11 @@ export const EMPLOYEES = [
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
+    },
+    performanceAreaScores: {
+			0: 4.2,
+			1: 3.5,
+			2: 4.9,
 		},
 		reviews: [
 			{
@@ -64,6 +69,11 @@ export const EMPLOYEES = [
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
+    },
+    performanceAreaScores: {
+			0: 2.2,
+			1: 3.1,
+			2: 4.5,
 		},
 		reviews: [
 			{
@@ -120,6 +130,11 @@ export const EMPLOYEES = [
 			1: 'Attendance',
 		  2: 'Cash Handling',
     },
+    performanceAreaScores: {
+			0: 1.2,
+			1: 3.5,
+			2: 3.9,
+		},
 		reviews: [
 			{
 				id: 0,
@@ -169,11 +184,16 @@ export const EMPLOYEES = [
 		id: 3,
     name: 'Vinnie Williams',
     photo: 'assets/img/vinniephoto.png',
-		totalScore: 4.3,
+		totalScore: 2.9,
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
+    },
+    performanceAreaScores: {
+			0: 3.7,
+			1: 2.5,
+			2: 3.1,
 		},
 		reviews: [
 			{

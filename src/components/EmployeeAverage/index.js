@@ -36,44 +36,42 @@ const avgStyle = {
 };
 
 function EmployeeAverage({ employee }) {
-	console.log('Employee Average', employee);
+	console.log(
+		'Employee Average',
+		typeof employee.totalScore,
+		employee.totalScore
+	);
 
-  let empR = employee.totalScore;
-  console.log(typeof empR, empR);
-	let rating;
-	switch (empR) {
-		case empR < 3:
-      rating = 'Needs Improvement';
-      break;
-		case empR > 3 && empR < 4:
-      rating = 'Satisfactory';
-      break;
-		case empR > 4:
-      rating = 'Above Average';
-      break;
-    default: rating = 'rating error'
-	}
+	let rating = '';
+		if (employee.totalScore < 3) 
+			rating = 'Needs Improvement';
+		else if  (employee.totalScore > 3 && employee.totalScore < 4)
+		  rating = 'Satisfactory';
+		else if  (employee.totalScore > 4)
+		  rating = 'Above Average';
+		else rating = 'Rating Error';
+	
 
 	return (
-		<div style={windowStyle} className='m-4'>
-			<div className='container'>
-				<div className='row' style={headingStyle1}>
-					<div className='col-9'>
-						<p className='wHeading pt-3'>{employee.name}</p>
-					</div>
-					<div className='col-2 my-2 pt-2' style={avgStyle}>
-						{employee.totalScore}
-					</div>
-				</div>
-			</div>
-			<div style={welcomeContent} className='m-3'>
-				<div className='container'>
-					<div display='flex' className='row pt-2'>
-						<div className='col'>{rating}</div>
-					</div>
-				</div>
-			</div>
-		</div>
+      <div style={windowStyle} className='m-4'>
+        <div className='container'>
+          <div className='row' style={headingStyle1}>
+            <div className='col-9'>
+              <p className='wHeading pt-3'>{employee.name}</p>
+            </div>
+            <div className='col-2 my-2 pt-2' style={avgStyle}>
+              {employee.totalScore}
+            </div>
+          </div>
+        </div>
+        <div style={welcomeContent} className='m-3'>
+          <div className='container'>
+            <div display='flex' className='row pt-2'>
+              <div className='col'>{rating}</div>
+            </div>
+          </div>
+        </div>
+      </div>
 	);
 }
 
