@@ -31,28 +31,13 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
-
-function RenderReviewDate({employee}) {
-
-  return (
-    employee.reviews.map(review => {
-      if (!review.complete) {
-      return (
-        review.date.month + '/' + review.date.day
-      )
-      } else return 'x'
-    })
-  )
-}
-
-
 function ReviewList(employee) {
   return (employee.employee.reviews.map(review => {
     return (
     
       <div style={empRowStyle} className='row pt-2 pb-2 mb-3'>
         <div className='col-4'>
-        {review.date.month}/{review.date.day}
+        {review.date.month}/{review.date.day}/{review.date.year}
         </div>
         <div style={scoreStyle} className='col-1 ml-auto mr-4 pl-1 pt-1'>
         {
