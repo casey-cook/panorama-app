@@ -1,11 +1,13 @@
 import React from 'react';
+import ReviewList from './ReviewList';
 
 const windowStyle2 = {
-	minHeight: 355,
+	maxHeight: 500,
 	backgroundColor: '#81ecc9',
 	maxWidth: 400,
-	minWidth: 400,
-	borderRadius: 6,
+  minWidth: 400,
+  borderRadius: 6,
+  overflowY:'auto'
 };
 
 const headingStyle = {
@@ -15,15 +17,18 @@ const headingStyle = {
 };
 
 
+
+
+
 function ReviewsCompletedList(employees) {
   return(
-      <div style={windowStyle2} className='ml-4 mb-4'>
+      <div style={windowStyle2} className='ml-4 mb-4 hideMe'>
         <div style={headingStyle}>
           <p className='wHeading p-2 mb-0'>Review Log</p>
         </div>
-        <div className='m-3'>
+        <div className='m-3' >
           <div className='container'>
-            Review List
+            <ReviewList employees={employees}/>
           </div>
         </div>
       </div>

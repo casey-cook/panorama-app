@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Navigation from '../Nav/index';
 import ReviewsCompletedList from '../ReviewsCompletedList';
 
-class Reviews extends Component {
 
+class Reviews extends Component {
+  
   render() {
     return (
       <React.Fragment>
@@ -11,7 +12,7 @@ class Reviews extends Component {
         <div className="container">
           <div className="row mt-5">
             <div className="col">
-              <ReviewsCompletedList employees={this.employees}/>
+              <ReviewsCompletedList employees={this.props.employees}/>
             </div>
           </div>
         </div>

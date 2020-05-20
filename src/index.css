@@ -33,3 +33,13 @@
     display: none;
   }
 }
+
+/*Hide Scrollbars baby*/
+.hideMe::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.hideMe {
+  -ms-overflow-style: none;
+}
