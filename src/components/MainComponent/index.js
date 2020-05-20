@@ -28,6 +28,7 @@ class MainComponent extends Component {
   }
 
   const ReviewWithId = ({match}) => {
+    console.log(match);
     //note: match = review.id
     return (
       <ReviewInfo 

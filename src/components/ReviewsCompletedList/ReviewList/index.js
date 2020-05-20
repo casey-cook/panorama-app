@@ -26,7 +26,7 @@ function ReviewList({employees}) {
  
   return employees.employees.map((employee) => (
       employee.reviews.map(review=>(
-        <Link to={`/reviews/${review.id}`} review={review} key={review.id}>
+        <Link to={`/reviews/${review.id}`} employee={employee} key={review.id}>
           <div
           className='row pt-2 pb-2 mb-3'
           style={empRowStyle}

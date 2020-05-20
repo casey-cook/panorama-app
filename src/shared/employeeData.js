@@ -16,11 +16,17 @@ export const EMPLOYEES = [
 		},
 		reviews: [
 			{
-				id: 0,
+        id: 0,
+        name: 'Sandy Jimenez',
 				date: {
           year: '2019',
           month: '08',
           day: '26'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 5,
@@ -31,11 +37,17 @@ export const EMPLOYEES = [
         complete: true
 			},
 			{
-				id: 1,
+        id: 1,
+        name: 'Sandy Jimenez',
 				date: {
           year: '2019',
           month: '09',
           day: '16'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 5,
@@ -46,11 +58,17 @@ export const EMPLOYEES = [
         complete: false
 			},
 			{
-				id: 2,
+        id: 2,
+        name: 'Sandy Jimenez',
 				date: {
           year: '2020',
           month: '02',
           day: '06'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 5,
@@ -80,11 +98,17 @@ export const EMPLOYEES = [
     },
 		reviews: [
 			{
-				id: 3,
+        id: 3,
+        name: 'Charles Jones',
 				date: {
           year: '2019',
           month: '08',
           day: '26'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 3,
@@ -95,11 +119,17 @@ export const EMPLOYEES = [
         complete: true
 			},
 			{
-				id: 4,
+        id: 4,
+        name: 'Charles Jones',
 				date: {
           year: '2019',
           month: '11',
           day: '20'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 2,
@@ -110,11 +140,17 @@ export const EMPLOYEES = [
         complete: false
 			},
 			{
-				id: 5,
+        id: 5,
+        name: 'Charles Jones',
 				date: {
           year: '2020',
           month: '02',
           day: '06'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 4,
@@ -143,11 +179,17 @@ export const EMPLOYEES = [
 		},
 		reviews: [
 			{
-				id: 6,
+        id: 6,
+        name: 'Charles Jones',
 				date: {
           year: '2019',
           month: '08',
           day: '26'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 3,
@@ -158,11 +200,17 @@ export const EMPLOYEES = [
         complete: true
 			},
 			{
-				id: 7,
+        id: 7,
+        name: 'Charles Jones',
 				date: {
           year: '2019',
           month: '11',
           day: '20'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 2,
@@ -173,11 +221,17 @@ export const EMPLOYEES = [
         complete: true
 			},
 			{
-				id: 8,
+        id: 8,
+        name: 'Charles Jones',
 				date: {
           year: '2020',
           month: '07',
           day: '06'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 4,
@@ -206,11 +260,17 @@ export const EMPLOYEES = [
 		},
 		reviews: [
 			{
-				id: 9,
+        id: 9,
+        name: 'Vinnie Williams',
 				date: {
           year: '2019',
           month: '08',
           day: '26'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 3,
@@ -221,11 +281,17 @@ export const EMPLOYEES = [
         complete: true
 			},
 			{
-				id: 10,
+        id: 10,
+        name: 'Vinnie Williams',
 				date: {
           year: '2019',
           month: '11',
           day: '20'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 2,
@@ -236,11 +302,17 @@ export const EMPLOYEES = [
         complete: true
 			},
 			{
-				id: 11,
+        id: 11,
+        name: 'Vinnie Williams',
 				date: {
           year: '2019',
           month: '02',
           day: '06'
+        },
+        areas: {
+          0: 'Customer Service',
+			    1: 'Attendance',
+		    	2: 'Cash Handling',
         },
 				scores: {
 					0: 4,

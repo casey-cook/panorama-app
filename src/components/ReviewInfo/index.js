@@ -2,10 +2,16 @@ import React from 'react';
 import Nav from '../Nav/index';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import ReviewDetailWindow from '../ReviewDetailWindow';
+
+
+
+
+
 
 function ReviewInfo(props) {
-	let review = props.review.filter((arr) => arr.length > 0);
-	console.log(review);
+  let review = props.review.filter((arr) => arr.length > 0);
+  //we have review!!!!
 
 	return (
 		<React.Fragment>
@@ -23,7 +29,9 @@ function ReviewInfo(props) {
 				</div>
 
 				<div className='row'>
-					<div className='col'>Review Details</div>
+					<div className='col'>
+            <ReviewDetailWindow review={review} />
+          </div>
 				</div>
 			</div>
 		</React.Fragment>
