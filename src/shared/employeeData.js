@@ -27,6 +27,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 4.5,
         },
+        notes: `Sandy's progress continues to improve.`,
         complete: true
 			},
 			{
@@ -41,6 +42,7 @@ export const EMPLOYEES = [
 					1: 5,
 					2: 4,
         },
+        notes: `Sandy's is kicking ass.`,
         complete: false
 			},
 			{
@@ -55,6 +57,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 4.5,
         },
+        notes: `Sandy is a truly gnarly programmer.`,
         complete: true
 			},
 		],
@@ -74,7 +77,7 @@ export const EMPLOYEES = [
 			0: 2.2,
 			1: 3.1,
 			2: 4.5,
-		},
+    },
 		reviews: [
 			{
 				id: 3,
@@ -88,6 +91,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 3,
         },
+        notes: `Charles is building on his potential.`,
         complete: true
 			},
 			{
@@ -102,6 +106,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 1,
         },
+        notes: `Charles has made progress but has room to improve.`,
         complete: false
 			},
 			{
@@ -116,6 +121,7 @@ export const EMPLOYEES = [
 					1: 3,
 					2: 4,
         },
+        notes: `Charles is doing good, he is going to Burning Man next week.`,
         complete: true
 			},
 		],
@@ -148,6 +154,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 3,
         },
+        notes: `Ashton is doing well.`,
         complete: true
 			},
 			{
@@ -162,6 +169,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 1,
         },
+        notes: `Ashton's drawer was $100 short this week. Need to improve.`,
         complete: true
 			},
 			{
@@ -176,6 +184,7 @@ export const EMPLOYEES = [
 					1: 3,
 					2: 4,
         },
+        notes: `Ashton is doing great!`,
         complete: true
 			},
 		],
@@ -208,6 +217,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 3,
         },
+        notes: `Vinnie is steady and consistent.`,
         complete: true
 			},
 			{
@@ -222,6 +232,7 @@ export const EMPLOYEES = [
 					1: 4,
 					2: 1,
         },
+        notes: `Vinnie lost his register key. -20 points Gryffindor.`,
         complete: true
 			},
 			{
@@ -236,6 +247,7 @@ export const EMPLOYEES = [
 					1: 3,
 					2: 4,
         },
+        notes: `Thank you for coming in on your day off this week!`,
         complete: false
 			},
 		],
