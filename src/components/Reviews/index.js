@@ -8,7 +8,6 @@ class Reviews extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navigation />
         <div className="container">
           <div className="row mt-5">
             <div className="col">

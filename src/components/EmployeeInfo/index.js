@@ -14,7 +14,6 @@ import EmployeeInfoReviews from '../EmployeeInfoReviews/index';
 function EmployeeInfo(props) {
   return(
     <React.Fragment>
-      <Nav />
       <div className="container">
         <div className="row">
           <div className="col">

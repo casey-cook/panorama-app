@@ -5,6 +5,8 @@ import Employees from '../Employees';
 import Reviews from '../Reviews';
 import EmployeeInfo from '../EmployeeInfo';
 import ReviewInfo from '../ReviewInfo';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
+import Navigation from '../Nav';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
@@ -42,36 +44,41 @@ class MainComponent extends Component {
   }
 
   return <div>
-          <Switch >
-          <Route
-              exact
-              path='/dashboard'
-              render={() => <Dashboard employees={this.state.employees} />}
-					  />
-            <Route
-              exact
-              path='/employees'
-              render={() => <Employees employees={this.state.employees} />}
-					  />
-            <Route
-              exact
-              path='/reviews'
-              render={() => <Reviews employees={this.state.employees} />}
-            
-					  />
-            <Route
-              exact
-              path={'/employees/:employeeId'}
-              component={EmployeeWithId}
-            />
-            <Route
-              exact
-              path={'/reviews/:reviewId'}
-              component={ReviewWithId}
-            />
-            
-            <Redirect to='/dashboard' />
-          </Switch>
+          <Navigation />
+          <TransitionGroup> 
+            <CSSTransition key={this.props.location.key} classNames='page' timeout={300}> 
+              <Switch >
+                <Route
+                    exact
+                    path='/dashboard'
+                    render={() => <Dashboard employees={this.state.employees} />}
+                  />
+                  <Route
+                    exact
+                    path='/employees'
+                    render={() => <Employees employees={this.state.employees} />}
+                  />
+                  <Route
+                    exact
+                    path='/reviews'
+                    render={() => <Reviews employees={this.state.employees} />}
+                  
+                  />
+                  <Route
+                    exact
+                    path={'/employees/:employeeId'}
+                    component={EmployeeWithId}
+                  />
+                  <Route
+                    exact
+                    path={'/reviews/:reviewId'}
+                    component={ReviewWithId}
+                  />
+                  
+                  <Redirect to='/dashboard' />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
         </div>;
   }
 }

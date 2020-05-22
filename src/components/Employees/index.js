@@ -9,7 +9,6 @@ class Employees extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navigation />
 				<div className='container'>
 					<div className='row mt-5' id='employeeSelect'>
 						<div className='col'>

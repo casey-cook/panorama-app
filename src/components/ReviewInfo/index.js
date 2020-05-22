@@ -15,7 +15,6 @@ function ReviewInfo(props) {
 
 	return (
 		<React.Fragment>
-			<Nav />
 			<div className='container'>
 				<div className='row'>
 					<div className='col'>
