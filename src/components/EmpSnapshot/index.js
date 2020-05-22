@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const windowStyle = {
 	minHeight: 355,
 	backgroundColor: '#81ecc9',
-  maxWidth: 400,
-  minWidth: 400,
+	maxWidth: 400,
+	minWidth: 400,
 	borderRadius: 6,
 };
 
@@ -35,32 +36,48 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
-function EmployeeList({employees}) {
-  //Todo: use logic below to calculate real average
-  // calculateAverageScore(employee), map thru score and average, insert on line 56
-  
+//Oops this one is nested, should probably be renamed..
+function EmployeeList({ employees }) {
+	//Todo: use logic below to calculate real average
+	// calculateAverageScore(employee), map thru score and average, insert on line 56
+	function changeBackground(e) {
+		e.target.style.backgroundColor = '#01403a';
+		e.target.style.color = 'white';
+	}
+
+	function revertBackground(e) {
+		e.target.style.backgroundColor = '#d0fdf9';
+		e.target.style.color = '#126872';
+	}
 
 	return employees.map((employee) => (
-		<div key={employee.id} style={empRowStyle} className='row pt-2 pb-2 mb-3'>
-			<div className='col-1'>
-				<img
-					style={imageStyle}
-					alt='profile-pic'
-					className='my-auto'
-					height='30'
-					src={employee.photo}
-				/>
-			</div>
-			<div className='ml-1 col-9 my-auto'>{employee.name}</div>
-			<div style={scoreStyle} className='pl-1 pt-1 col-1'>
-				<div>{employee.totalScore}</div>
-			</div>
-		</div>
+    <Link to={`/employees/${employee.id}`}>
+      <div
+        key={employee.id}
+        style={empRowStyle}
+        className='row pt-2 pb-2 mb-3'
+        onMouseEnter={changeBackground}
+        onMouseLeave={revertBackground}
+      >
+        <div className='col-1'>
+          <img
+            style={imageStyle}
+            alt='profile-pic'
+            className='my-auto'
+            height='30'
+            src={employee.photo}
+          />
+        </div>
+        <div className='ml-1 col-9 my-auto'>{employee.name}</div>
+        <div style={scoreStyle} className='pl-1 pt-1 col-1'>
+          <div>{employee.totalScore}</div>
+        </div>
+      </div>
+    </Link>
 	));
 }
 
 function EmpSnapshot(props) {
-
 	return (
 		<div style={windowStyle} className='ml-4 mb-4'>
 			<div style={headingStyle}>
