@@ -40,7 +40,7 @@ export const EMPLOYEES = [
         id: 1,
         name: 'Sandy Jimenez',
 				date: {
-          year: '2019',
+          year: '2020',
           month: '09',
           day: '16'
         },
@@ -122,7 +122,7 @@ export const EMPLOYEES = [
         id: 4,
         name: 'Charles Jones',
 				date: {
-          year: '2019',
+          year: '2020',
           month: '11',
           day: '20'
         },
@@ -180,7 +180,7 @@ export const EMPLOYEES = [
 		reviews: [
 			{
         id: 6,
-        name: 'Charles Jones',
+        name: 'Ashton Reece',
 				date: {
           year: '2019',
           month: '08',
@@ -201,7 +201,7 @@ export const EMPLOYEES = [
 			},
 			{
         id: 7,
-        name: 'Charles Jones',
+        name: 'Ashton Reece',
 				date: {
           year: '2019',
           month: '11',
@@ -222,7 +222,7 @@ export const EMPLOYEES = [
 			},
 			{
         id: 8,
-        name: 'Charles Jones',
+        name: 'Ashton Reece',
 				date: {
           year: '2020',
           month: '07',
@@ -239,7 +239,7 @@ export const EMPLOYEES = [
 					2: 4,
         },
         notes: `Ashton is doing great!`,
-        complete: true
+        complete: false
 			},
 		],
   },
@@ -305,7 +305,7 @@ export const EMPLOYEES = [
         id: 11,
         name: 'Vinnie Williams',
 				date: {
-          year: '2019',
+          year: '2020',
           month: '02',
           day: '06'
         },

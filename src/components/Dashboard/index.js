@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from '../Nav/index'
 import WelcomeDash from '../WelcomeDash/index';
 import EmpSnapshot from '../EmpSnapshot/index';
 import TeamAverage from '../TeamAverage/index';
@@ -24,7 +23,7 @@ class Dashboard extends Component {
               <EmpSnapshot employees={this.props.employees} />
             </div>
             <div className="col">
-              <UpcomingReviews employees={this.props.employees} />
+              <UpcomingReviews incomplete={this.props.incomplete} employees={this.props.employees} />
             </div>
           </div>
         </div>

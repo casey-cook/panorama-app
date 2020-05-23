@@ -36,6 +36,7 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
+
 //Oops this one is nested, should probably be renamed..
 function EmployeeList({ employees }) {
 	//Todo: use logic below to calculate real average

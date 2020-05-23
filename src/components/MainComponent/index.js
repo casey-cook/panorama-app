@@ -21,7 +21,17 @@ class MainComponent extends Component {
   
   
   
+  
   render() {
+
+  //Creating an array of incomplete reviews
+
+  let incomplete = [];
+  this.state.employees.forEach((employee)=>{
+    incomplete.push(employee.reviews.filter((review) => review.complete === false))
+  })
+
+
 
   const EmployeeWithId = ({match}) => {
     return (
@@ -51,7 +61,7 @@ class MainComponent extends Component {
                 <Route
                     exact
                     path='/dashboard'
-                    render={() => <Dashboard employees={this.state.employees} />}
+                    render={() => <Dashboard incomplete={incomplete} employees={this.state.employees} />}
                   />
                   <Route
                     exact

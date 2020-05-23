@@ -23,40 +23,34 @@ const empRowStyle = {
 };
 
 
-function RenderReviewDate({employee}) {
+function RenderReviewList({incomplete}) {
 
-  return (
-    employee.reviews.map(review => {
-      if (!review.complete) {
-      return (
-        review.date.month + '/' + review.date.day
-      )
-      } else return 'x'
-    })
-  )
-}
+    let toDisplay = incomplete.filter((review)=> review.length !== 0)
+    console.log(toDisplay);
 
 
-function RenderReviewList({employees}) {
-  
-  
-  return employees.map((employee) => {
+    return toDisplay.map((review)=>{
 
     return (
-    
-		<div key={employee.id} style={empRowStyle} className='row pt-2 pb-2 mb-3'>
+		<div style={empRowStyle} className='row pt-2 pb-2 mb-3'>
 			<div className='col-4'>
-				<RenderReviewDate employee={employee}/>
+      {review[0].date.month}/{review[0].date.day}/{review[0].date.year}
+     
 			</div>
       <div className='col-6'>
-				{employee.name}
+				{review[0].name}
 			</div>
+      <div className="col-1">
+        <button>></button>
+      </div>
 		</div>
   )});
     
 }
 
+
 function UpcomingReviews(props) {
+  console.log(props)
 
 	return (
 		<div style={windowStyle} className='ml-4'>
@@ -65,7 +59,7 @@ function UpcomingReviews(props) {
 			</div>
 			<div className='m-3'>
 				<div className='container'>
-					<RenderReviewList employees={props.employees} />
+					<RenderReviewList incomplete={props.incomplete} />
 				</div>
 			</div>
 		</div>

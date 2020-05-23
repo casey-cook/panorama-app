@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from '../Nav/index';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import ReviewDetailWindow from '../ReviewDetailWindow';

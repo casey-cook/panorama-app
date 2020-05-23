@@ -1,6 +1,5 @@
 import React from 'react';
 import EmployeeeAverage from '../EmployeeAverage/index';
-import Nav from '../Nav/index'
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import EmployeePerformance from '../EmployeePerformance/index';

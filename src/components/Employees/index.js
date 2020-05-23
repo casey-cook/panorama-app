@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from '../Nav/index';
 import EmployeeSelect from '../EmployeeSelect/index';
 
 
