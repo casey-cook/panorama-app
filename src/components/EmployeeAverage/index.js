@@ -36,18 +36,15 @@ const avgStyle = {
 };
 
 function EmployeeAverage({ employee }) {
-	console.log(
-		'Employee Average',
-		typeof employee.totalScore,
-		employee.totalScore
-	);
-
+	
+  let score = employee.totalScore();
+  
 	let rating = '';
-		if (employee.totalScore < 3) 
+		if (score < 3) 
 			rating = 'Needs Improvement';
-		else if  (employee.totalScore > 3 && employee.totalScore < 4)
+		else if  (score > 3 && score < 4)
 		  rating = 'Satisfactory';
-		else if  (employee.totalScore > 4)
+		else if  (score > 4)
 		  rating = 'Above Average';
 		else rating = 'Rating Error';
 	
@@ -60,7 +57,7 @@ function EmployeeAverage({ employee }) {
               <p className='wHeading pt-3'>{employee.name}</p>
             </div>
             <div className='col-2 my-2 pt-2' style={avgStyle}>
-              {employee.totalScore}
+              {employee.totalScore()}
             </div>
           </div>
         </div>

@@ -40,9 +40,10 @@ const avgStyle = {
 
 function RenderTeamAverage({employees}) {
     let total = 0;
-    employees.map(employee=> (
-      total += employee.totalScore
-    ))
+    employees.forEach(employee=> {
+      let adder = (employee.totalScore());
+      total += parseFloat(adder)
+    })
     return (total / employees.length).toFixed(1);
     }
 

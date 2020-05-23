@@ -26,13 +26,11 @@ const empRowStyle = {
 function RenderReviewList({incomplete}) {
 
     let toDisplay = incomplete.filter((review)=> review.length !== 0)
-    console.log(toDisplay);
-
 
     return toDisplay.map((review)=>{
 
     return (
-		<div style={empRowStyle} className='row pt-2 pb-2 mb-3'>
+		<div style={empRowStyle} key={review[0].id} className='row pt-2 pb-2 mb-3'>
 			<div className='col-4'>
       {review[0].date.month}/{review[0].date.day}/{review[0].date.year}
      
@@ -50,7 +48,6 @@ function RenderReviewList({incomplete}) {
 
 
 function UpcomingReviews(props) {
-  console.log(props)
 
 	return (
 		<div style={windowStyle} className='ml-4'>

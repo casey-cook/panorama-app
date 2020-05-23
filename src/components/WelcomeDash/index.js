@@ -26,6 +26,37 @@ const welcomeContent = {
 	color: '#126872',
 };
 
+//BELOW to be exported to its own component
+
+function PastDueReviews({incomplete}) {
+  let counter = 0;
+  let dateNow = new Date();
+  console.log(dateNow);
+  console.log(incomplete);
+
+  incomplete.forEach(review => {
+    let reviewDate = new Date(review[0].date.year,review[0].date.month,review[0].date.day);
+    if (reviewDate < dateNow) {
+      counter+=1;
+    }
+  }
+  )
+
+
+
+  return(
+    <React.Fragment>{counter}</React.Fragment>
+  )
+}
+
+
+
+
+
+//ABOVE to be exported to its own component
+
+
+
 class WelcomeDash extends Component {
 	render() {
 		return (
@@ -39,7 +70,7 @@ class WelcomeDash extends Component {
               <div className='col-1'>
                 <FontAwesomeIcon icon={faExclamationCircle} style={{ color: '#126872' }} />
               </div>
-              <div className='col-9'>0 Past Due Reviews</div>
+              <div className='col-9'><PastDueReviews incomplete={this.props.incomplete}/> Past Due</div>
             </div>
             <div className='row pt-2'>
               <div className='col-1'>

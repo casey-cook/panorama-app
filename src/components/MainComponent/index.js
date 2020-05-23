@@ -24,8 +24,7 @@ class MainComponent extends Component {
   
   render() {
 
-  //Creating an array of incomplete reviews
-
+  //Create array of incomplete reviews for dashboard
   let incomplete = [];
   this.state.employees.forEach((employee)=>{
     incomplete.push(employee.reviews.filter((review) => review.complete === false))
@@ -40,8 +39,6 @@ class MainComponent extends Component {
   }
 
   const ReviewWithId = ({match}) => {
-    console.log(match);
-    //note: match = review.id
     return (
       <ReviewInfo 
         review={

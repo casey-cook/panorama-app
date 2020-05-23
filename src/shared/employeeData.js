@@ -3,7 +3,12 @@ export const EMPLOYEES = [
 		id: 0,
     name: 'Sandy Jimenez',
     photo: 'assets/img/sandyphoto.png',
-		totalScore: 4.5,
+		totalScore: function() {
+      return(
+        ((this.performanceAreaScores[0] +
+        this.performanceAreaScores[1] +
+        this.performanceAreaScores[2])/3).toFixed(1))
+    },
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
@@ -85,7 +90,12 @@ export const EMPLOYEES = [
 		id: 1,
     name: 'Charles Jones',
     photo: 'assets/img/charlesphoto.png',
-		totalScore: 4.8,
+		totalScore: function() {
+      return(
+        ((this.performanceAreaScores[0] +
+        this.performanceAreaScores[1] +
+        this.performanceAreaScores[2])/3).toFixed(1))
+    },
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
@@ -166,7 +176,12 @@ export const EMPLOYEES = [
 		id: 2,
     name: 'Ashton Reece',
     photo: 'assets/img/ashtonphoto.png',
-		totalScore: 3.7,
+		totalScore: function() {
+      return(
+        ((this.performanceAreaScores[0] +
+        this.performanceAreaScores[1] +
+        this.performanceAreaScores[2])/3).toFixed(1))
+    },
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
@@ -247,7 +262,12 @@ export const EMPLOYEES = [
 		id: 3,
     name: 'Vinnie Williams',
     photo: 'assets/img/vinniephoto.png',
-		totalScore: 2.9,
+		totalScore: function() {
+      return(
+        ((this.performanceAreaScores[0] +
+        this.performanceAreaScores[1] +
+        this.performanceAreaScores[2])/3).toFixed(1))
+    },
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',

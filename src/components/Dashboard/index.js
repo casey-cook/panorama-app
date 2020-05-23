@@ -12,7 +12,7 @@ class Dashboard extends Component {
         <div className='container'>
           <div className="row">
             <div className="col">
-              <WelcomeDash />
+              <WelcomeDash incomplete={this.props.incomplete} />
             </div>
             <div className="col">
               <TeamAverage employees={this.props.employees} />
