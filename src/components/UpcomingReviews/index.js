@@ -114,7 +114,7 @@ class ReviewForm extends Component {
 
 		return (
 			<div>
-				<Button onClick={this.toggleModal} outline='true'>
+				<Button onClick={this.toggleModal} outline='true' size='sm'>
 					>
 				</Button>
 				<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
@@ -211,7 +211,7 @@ class ReviewForm extends Component {
 										type='textarea'
 										id='comments'
 										name='comments'
-										rows='12'
+										rows='8'
                     placeholder='Please include observable behaviors that contributed to your ratings.'
 										value={this.state.comments}
                     invalid={errors.comments}
