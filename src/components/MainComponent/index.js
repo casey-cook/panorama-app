@@ -15,7 +15,10 @@ class MainComponent extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-			employees: EMPLOYEES,
+      employees: EMPLOYEES,
+      addReview: function(newReview, employeeID) {
+        // add Review Logic
+      }
 		};
   }
   
@@ -58,7 +61,7 @@ class MainComponent extends Component {
                 <Route
                     exact
                     path='/dashboard'
-                    render={() => <Dashboard incomplete={incomplete} employees={this.state.employees} />}
+                    render={() => <Dashboard addReview={this.state.addReview.bind(this)} incomplete={incomplete} employees={this.state.employees} />}
                   />
                   <Route
                     exact

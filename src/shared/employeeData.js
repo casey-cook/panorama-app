@@ -7,7 +7,9 @@ export const EMPLOYEES = [
       return(
         ((this.performanceAreaScores[0] +
         this.performanceAreaScores[1] +
-        this.performanceAreaScores[2])/3).toFixed(1))
+        this.performanceAreaScores[2])/3)
+        .toFixed(1)
+      )
     },
 		performanceAreas: {
 			0: 'Customer Service',
@@ -15,9 +17,9 @@ export const EMPLOYEES = [
 			2: 'Cash Handling',
     },
     performanceAreaScores: {
-			0: 4.2,
-			1: 3.5,
-			2: 4.9,
+			0: 4.1,
+			1: 1.5,
+			2: 4.6,
 		},
 		reviews: [
 			{
@@ -36,7 +38,7 @@ export const EMPLOYEES = [
 				scores: {
 					0: 5,
 					1: 4,
-					2: 4.5,
+					2: 5,
         },
         notes: `Sandy's progress continues to improve.`,
         complete: true
@@ -59,7 +61,7 @@ export const EMPLOYEES = [
 					1: 5,
 					2: 4,
         },
-        notes: `Sandy's is kicking ass.`,
+        notes: `Sandy is kicking ass.`,
         complete: false
 			},
 			{

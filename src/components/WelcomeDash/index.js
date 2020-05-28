@@ -35,7 +35,7 @@ function PastDueReviews({incomplete}) {
   console.log(incomplete);
 
   incomplete.forEach(review => {
-    let reviewDate = new Date(review[0].date.year,review[0].date.month,review[0].date.day);
+    let reviewDate = new Date(review[0]?.date.year,review[0]?.date.month,review[0]?.date.day);
     if (reviewDate < dateNow) {
       counter+=1;
     }
