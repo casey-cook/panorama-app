@@ -23,7 +23,7 @@ class Dashboard extends Component {
               <EmpSnapshot employees={this.props.employees} />
             </div>
             <div className="col">
-              <UpcomingReviews testFunction={this.props.testFunction} incomplete={this.props.incomplete} employees={this.props.employees} />
+              <UpcomingReviews testFunction={this.props.testFunction} incomplete={this.props.incomplete} employees={this.props.employees} addReview={this.props.addReview} />
             </div>
           </div>
         </div>

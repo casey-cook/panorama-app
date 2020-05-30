@@ -38,15 +38,18 @@ class ReviewForm extends Component {
 		super(props);
 
 		this.state = {
-			isModalOpen: false,
-			name: '',
-			area1: '',
-			area2: '',
-			area3: '',
-      comments: '',
+      isModalOpen: false,
+      reviewId: props.reviewId,
+      name: props.name,
+      areas: props.areas,
+      area1: '',
+      area2: '',
+      area3: '',
+      notes: '',
+      complete: true,
       touched: {
         name: false,
-        comments: false
+        notes: false
       }
 		};
 
@@ -61,10 +64,10 @@ class ReviewForm extends Component {
 		});
   }
 
-  validate(name, comments) {
+  validate(name, notes) {
     const errors = {
       name: '',
-      comments: ''
+      notes: ''
     }
 
     if (this.state.touched.name) {
@@ -75,9 +78,9 @@ class ReviewForm extends Component {
       }
     }
 
-    if (this.state.touched.comments) {
-      if (comments.length < 140) {
-        errors.comments = 'Feedback should be at least 140 characters'
+    if (this.state.touched.notes) {
+      if (notes.length < 140) {
+        errors.notes = 'Feedback should be at least 140 characters'
       }
     }
 
@@ -104,13 +107,17 @@ class ReviewForm extends Component {
 	handleSubmit(event) {
 		console.log('Current state is: ' + JSON.stringify(this.state));
     alert('Current state is: ' + JSON.stringify(this.state));
+    
+    // Is below correct for bubbling state back up to parent? 
+    this.addReview();
+    
     this.toggleModal();
 		event.preventDefault();
 	}
 
 	render() {
 
-    const errors = this.validate(this.state.name, this.state.comments)
+    const errors = this.validate(this.state.name, this.state.notes)
 
 		return (
 			<div>
@@ -141,7 +148,7 @@ class ReviewForm extends Component {
 							</FormGroup>
               <FormGroup row>
 								<Label htmlFor='area1' md={2}>
-									Area 1
+									{this.state.areas[0]}
 								</Label>
 								<Col md={6}>
 									<Input
@@ -162,7 +169,7 @@ class ReviewForm extends Component {
 							</FormGroup>
               <FormGroup row>
 								<Label htmlFor='area2' md={2}>
-									Area 2
+                {this.state.areas[1]}
 								</Label>
 								<Col md={6}>
 									<Input
@@ -183,7 +190,7 @@ class ReviewForm extends Component {
 							</FormGroup>
               <FormGroup row>
 								<Label htmlFor='area3' md={2}>
-									Area 3
+                {this.state.areas[2]}
 								</Label>
 								<Col md={6}>
 									<Input
@@ -203,22 +210,22 @@ class ReviewForm extends Component {
 								</Col>
 							</FormGroup>
 							<FormGroup row>
-								<Label htmlFor='comments' md={2}>
+								<Label htmlFor='notes' md={2}>
 									Comments
 								</Label>
 								<Col md={10}>
 									<Input
 										type='textarea'
-										id='comments'
-										name='comments'
+										id='notes'
+										name='notes'
 										rows='8'
                     placeholder='Please include observable behaviors that contributed to your ratings.'
-										value={this.state.comments}
-                    invalid={errors.comments}
+										value={this.state.notes}
+                    invalid={errors.notes}
 										onChange={this.handleInputChange}
-                    onBlur={this.handleBlur('comments')}
+                    onBlur={this.handleBlur('notes')}
 									></Input>
-                  <FormFeedback>{errors.comments}</FormFeedback>
+                  <FormFeedback>{errors.notes}</FormFeedback>
 								</Col>
 							</FormGroup>
 							<FormGroup row>
@@ -236,7 +243,7 @@ class ReviewForm extends Component {
 	}
 }
 
-function RenderReviewList({ incomplete }) {
+function RenderReviewList({ incomplete }, addReview) {
 	let toDisplay = incomplete.filter((review) => review.length !== 0);
 
 	return toDisplay.map((review) => {
@@ -251,7 +258,13 @@ function RenderReviewList({ incomplete }) {
 				</div>
 				<div className='col-6'>{review[0].name}</div>
 				<div className='col-1'>
-					<ReviewForm />
+					<ReviewForm 
+            reviewId={review[0].id}
+            name={review[0].name}
+            date={review[0].date}
+            areas={review[0].areas}
+            addReview={addReview}
+          />
 				</div>
 			</div>
 		);
@@ -265,9 +278,9 @@ function UpcomingReviews(props) {
 				<p className='wHeading p-2 mb-0'>Upcoming Reviews</p>
 			</div>
 			<div className='m-3'>
-        <div><button onClick={props.testFunction}>TEST</button></div>
+        <div><button onClick={props.addReview}>TEST</button></div>
 				<div className='container'>
-					<RenderReviewList incomplete={props.incomplete} />
+					<RenderReviewList incomplete={props.incomplete} addReview={props.addReview} />
 				</div>
 			</div>
 		</div>

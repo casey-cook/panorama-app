@@ -16,9 +16,25 @@ class MainComponent extends Component {
 		super(props);
 		this.state = {
       employees: EMPLOYEES,
-      addReview: function(newReview, employeeID) {
-        //do like this-> this.setState((state) => ({ value: state.value + 1}));
-        // this.setState(state) => ( state.employees.employeeId?.push(newReview) )
+      addReview: function(newReview, reviewId) {
+        //1. Make a shallow copy of state
+        let employees = [...this.state.employees];
+        //2. Replace the review we're intested in
+        //(search for review, then edit once found)
+        employees.forEach(employee=>{
+          employee.reviews.map(review=> {
+            if (review.id === reviewId) {
+              review = newReview
+            }
+          })
+
+          return employees;
+        
+        })
+        //Final Step
+        this.setState({employees});
+
+        console.log(employees);
       },
       testFunction: function(){
         console.log('You Triggered Me Yo - Cool!')
@@ -65,8 +81,14 @@ class MainComponent extends Component {
                 <Route
                     exact
                     path='/dashboard'
-                    render={() => <Dashboard addReview={this.state.addReview.bind(this)} testFunction={this.state.testFunction.bind(this)}  incomplete={incomplete} employees={this.state.employees} />}
-                  />
+                    render={() => <Dashboard 
+                                    addReview={this.state.addReview.bind(this)} 
+                                    testFunction={this.state.testFunction.bind(this)}  
+                                    incomplete={incomplete} 
+                                    employees={this.state.employees} 
+
+                                    />}
+                />
                   <Route
                     exact
                     path='/employees'
