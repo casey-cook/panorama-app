@@ -265,6 +265,7 @@ function UpcomingReviews(props) {
 				<p className='wHeading p-2 mb-0'>Upcoming Reviews</p>
 			</div>
 			<div className='m-3'>
+        <div><button onClick={props.testFunction}>TEST</button></div>
 				<div className='container'>
 					<RenderReviewList incomplete={props.incomplete} />
 				</div>

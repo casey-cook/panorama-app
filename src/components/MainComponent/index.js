@@ -21,7 +21,7 @@ class MainComponent extends Component {
         // this.setState(state) => ( state.employees.employeeId?.push(newReview) )
       },
       testFunction: function(){
-        console.log('Triggered Yo')
+        console.log('You Triggered Me Yo - Cool!')
       }
 		};
   }
@@ -65,7 +65,7 @@ class MainComponent extends Component {
                 <Route
                     exact
                     path='/dashboard'
-                    render={() => <Dashboard addReview={this.state.addReview.bind(this)} incomplete={incomplete} employees={this.state.employees} />}
+                    render={() => <Dashboard addReview={this.state.addReview.bind(this)} testFunction={this.state.testFunction.bind(this)}  incomplete={incomplete} employees={this.state.employees} />}
                   />
                   <Route
                     exact
