@@ -1,5 +1,5 @@
 import React from 'react';
-import EmployeeList from '../EmployeeList/index';
+import EmployeeList from '../EmployeeList';
 
 const windowStyle2 = {
 	minHeight: 355,

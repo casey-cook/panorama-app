@@ -1,5 +1,5 @@
 import React from 'react';
-import EmployeePerfAreaList from '../EmployeePerfAreaList/index';
+import EmployeePerfAreaList from '../EmployeePerfAreaList';
 
 const windowStyle3 = {
 	minHeight: 250,

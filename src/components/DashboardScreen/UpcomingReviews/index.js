@@ -114,7 +114,7 @@ class ReviewForm extends Component {
 
 		return (
 			<div>
-				<Button onClick={this.toggleModal} outline='true' size='sm'>
+				<Button onClick={this.toggleModal} outline={true} size='sm'>
 					>
 				</Button>
 				<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>

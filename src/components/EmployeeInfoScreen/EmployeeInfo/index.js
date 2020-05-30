@@ -2,8 +2,8 @@ import React from 'react';
 import EmployeeeAverage from '../EmployeeAverage/index';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import EmployeePerformance from '../EmployeePerformance/index';
-import EmployeeInfoReviews from '../EmployeeInfoReviews/index';
+import EmployeePerformance from '../EmployeePerformance';
+import EmployeeInfoReviews from '../EmployeeInfoReviews';
 
 
 //TBD

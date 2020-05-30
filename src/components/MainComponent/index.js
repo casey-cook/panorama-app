@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { EMPLOYEES } from '../../shared/employeeData';
-import Dashboard from '../Dashboard';
-import Employees from '../Employees';
-import Reviews from '../Reviews';
-import EmployeeInfo from '../EmployeeInfo';
-import ReviewInfo from '../ReviewInfo';
+import Dashboard from '../DashboardScreen/Dashboard';
+import Employees from '../EmployeeScreen/Employees';
+import Reviews from '../ReviewsScreen/Reviews';
+import EmployeeInfo from '../EmployeeInfoScreen/EmployeeInfo';
+import ReviewInfo from '../ReviewInfoScreen/ReviewInfo';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import Navigation from '../Nav';
 
@@ -17,7 +17,11 @@ class MainComponent extends Component {
 		this.state = {
       employees: EMPLOYEES,
       addReview: function(newReview, employeeID) {
-        // add Review Logic
+        //do like this-> this.setState((state) => ({ value: state.value + 1}));
+        // this.setState(state) => ( state.employees.employeeId?.push(newReview) )
+      },
+      testFunction: function(){
+        console.log('Triggered Yo')
       }
 		};
   }

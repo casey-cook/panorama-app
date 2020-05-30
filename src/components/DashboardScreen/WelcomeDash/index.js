@@ -31,8 +31,6 @@ const welcomeContent = {
 function PastDueReviews({incomplete}) {
   let counter = 0;
   let dateNow = new Date();
-  console.log(dateNow);
-  console.log(incomplete);
 
   incomplete.forEach(review => {
     let reviewDate = new Date(review[0]?.date.year,review[0]?.date.month,review[0]?.date.day);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EmployeeSelect from '../EmployeeSelect/index';
+import EmployeeSelect from '../EmployeeSelect';
 
 
 
