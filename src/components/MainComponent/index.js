@@ -54,8 +54,6 @@ class MainComponent extends Component {
                     exact
                     path='/dashboard'
                     render={() => <Dashboard 
-                                    addReview={this.state.addReview.bind(this)} 
-                                    testFunction={this.state.testFunction.bind(this)}  
                                     incomplete={incomplete} 
                                     employees={this.state.employees} 
 
