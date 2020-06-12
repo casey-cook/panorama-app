@@ -16,34 +16,8 @@ class MainComponent extends Component {
 		super(props);
 		this.state = {
       employees: EMPLOYEES,
-      addReview: function(newReview, reviewId) {
-        //1. Make a shallow copy of state
-        let employees = [...this.state.employees];
-        //2. Replace the review we're intested in
-        //(search for review, then edit once found)
-        employees.forEach(employee=>{
-          employee.reviews.map(review=> {
-            if (review.id === reviewId) {
-              review = newReview
-            }
-          })
-
-          return employees;
-        
-        })
-        //Final Step
-        this.setState({employees});
-
-        console.log(employees);
-      },
-      testFunction: function(){
-        console.log('You Triggered Me Yo - Cool!')
-      }
 		};
   }
-  
-  
-  
   
   render() {
 
@@ -52,8 +26,6 @@ class MainComponent extends Component {
   this.state.employees.forEach((employee)=>{
     incomplete.push(employee.reviews.filter((review) => review.complete === false))
   })
-
-
 
   const EmployeeWithId = ({match}) => {
     return (
