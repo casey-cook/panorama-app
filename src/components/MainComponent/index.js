@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
-import { EMPLOYEES } from '../../shared/employeeData';
+
+import Navigation from '../Nav';
 import Dashboard from '../DashboardScreen/Dashboard';
 import Employees from '../EmployeeScreen/Employees';
 import Reviews from '../ReviewsScreen/Reviews';
 import EmployeeInfo from '../EmployeeInfoScreen/EmployeeInfo';
 import ReviewInfo from '../ReviewInfoScreen/ReviewInfo';
-import {TransitionGroup, CSSTransition} from 'react-transition-group';
-import Navigation from '../Nav';
 
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    employees: state.employees
+  }
+}
 
 class MainComponent extends Component {
-
-  constructor(props) {
-		super(props);
-		this.state = {
-      employees: EMPLOYEES,
-		};
-  }
   
   render() {
 
   //Create array of incomplete reviews for dashboard
   let incomplete = [];
-  this.state.employees.forEach((employee)=>{
+  this.props.employees.forEach((employee)=>{
     incomplete.push(employee.reviews.filter((review) => review.complete === false))
   })
 
   const EmployeeWithId = ({match}) => {
     return (
-      <EmployeeInfo employee={this.state.employees.filter(employee => employee.id === +match.params.employeeId)[0]} />
+      <EmployeeInfo employee={this.props.employees.filter(employee => employee.id === +match.params.employeeId)[0]} />
     )
   }
 
@@ -37,7 +37,7 @@ class MainComponent extends Component {
     return (
       <ReviewInfo 
         review={
-          this.state.employees.map(employee =>{
+          this.props.employees.map(employee =>{
           return (employee.reviews.filter(review => review.id === +match.params.reviewId)
           )})
         }
@@ -55,19 +55,19 @@ class MainComponent extends Component {
                     path='/dashboard'
                     render={() => <Dashboard 
                                     incomplete={incomplete} 
-                                    employees={this.state.employees} 
+                                    employees={this.props.employees} 
 
                                     />}
                 />
                   <Route
                     exact
                     path='/employees'
-                    render={() => <Employees employees={this.state.employees} />}
+                    render={() => <Employees employees={this.props.employees} />}
                   />
                   <Route
                     exact
                     path='/reviews'
-                    render={() => <Reviews employees={this.state.employees} />}
+                    render={() => <Reviews employees={this.props.employees} />}
                   
                   />
                   <Route
@@ -89,4 +89,4 @@ class MainComponent extends Component {
   }
 }
 
-export default withRouter(MainComponent);
+export default withRouter(connect(mapStateToProps)(MainComponent));
