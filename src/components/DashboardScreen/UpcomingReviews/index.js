@@ -55,7 +55,7 @@ class ReviewForm extends Component {
 
 		this.toggleModal = this.toggleModal.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	toggleModal() {
@@ -104,18 +104,22 @@ class ReviewForm extends Component {
 		});
 	}
 
+
 	handleSubmit(event) {
-		console.log('Current state is: ' + JSON.stringify(this.state));
+    event.preventDefault();
+    console.log('Current state is: ' + JSON.stringify(this.state));
     alert('Current state is: ' + JSON.stringify(this.state));
     
-    // Is below correct for bubbling state back up to parent? 
-    this.addReview();
+    // Is below correct?
+    this.props.completeReview(this.state.reviewId, this.state.name, this.state.area1, this.state.area2, this.state.area3, this.state.notes, this.state.complete);
     
     this.toggleModal();
-		event.preventDefault();
+		
 	}
 
 	render() {
+
+    console.log()
 
     const errors = this.validate(this.state.name, this.state.notes)
 
@@ -243,9 +247,8 @@ class ReviewForm extends Component {
 	}
 }
 
-function RenderReviewList({ incomplete }, addReview) {
-	let toDisplay = incomplete.filter((review) => review.length !== 0);
-
+function RenderReviewList( props ) {
+	let toDisplay = props.incomplete.filter((review) => review.length !== 0);
 	return toDisplay.map((review) => {
 		return (
 			<div
@@ -263,7 +266,7 @@ function RenderReviewList({ incomplete }, addReview) {
             name={review[0].name}
             date={review[0].date}
             areas={review[0].areas}
-            addReview={addReview}
+            completeReview={props.completeReview}
           />
 				</div>
 			</div>
@@ -279,7 +282,7 @@ function UpcomingReviews(props) {
 			</div>
 			<div className='m-3'>
 				<div className='container'>
-					<RenderReviewList incomplete={props.incomplete} addReview={props.addReview} />
+					<RenderReviewList incomplete={props.incomplete} completeReview={props.completeReview} />
 				</div>
 			</div>
 		</div>

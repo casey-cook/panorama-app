@@ -11,10 +11,17 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { completeReview } from '../../redux/ActionCreators';
+
 const mapStateToProps = state => {
   return {
     employees: state.employees
   }
+}
+
+//handles getting the dispatching of actions to components
+const mapDispatchToProps = {
+  completeReview: (reviewId, name, area1, area2, area3, notes, complete) => (completeReview(reviewId, name, area1, area2, area3, notes, complete))
 }
 
 class MainComponent extends Component {
@@ -55,7 +62,8 @@ class MainComponent extends Component {
                     path='/dashboard'
                     render={() => <Dashboard 
                                     incomplete={incomplete} 
-                                    employees={this.props.employees} 
+                                    employees={this.props.employees}
+                                    completeReview={this.props.completeReview} 
 
                                     />}
                 />
@@ -89,4 +97,4 @@ class MainComponent extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(MainComponent));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainComponent));

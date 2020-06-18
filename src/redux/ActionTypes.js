@@ -1,0 +1,1 @@
+export const REVIEW_COMPLETED = 'REVIEW_COMPLETED';
