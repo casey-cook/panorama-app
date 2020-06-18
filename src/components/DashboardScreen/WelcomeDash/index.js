@@ -27,7 +27,6 @@ const welcomeContent = {
 };
 
 //BELOW to be exported to its own component
-
 function PastDueReviews({incomplete}) {
   let counter = 0;
   let dateNow = new Date();
@@ -40,19 +39,11 @@ function PastDueReviews({incomplete}) {
   }
   )
 
-
-
   return(
     <React.Fragment>{counter}</React.Fragment>
   )
 }
-
-
-
-
-
 //ABOVE to be exported to its own component
-
 
 
 class WelcomeDash extends Component {

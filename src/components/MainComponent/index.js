@@ -19,7 +19,7 @@ const mapStateToProps = state => {
   }
 }
 
-//handles getting the dispatching of actions to components
+//handles allowing/making the dispatching of actions available to components
 const mapDispatchToProps = {
   completeReview: (reviewId, name, area1, area2, area3, notes, complete) => (completeReview(reviewId, name, area1, area2, area3, notes, complete))
 }
@@ -33,6 +33,10 @@ class MainComponent extends Component {
   this.props.employees.forEach((employee)=>{
     incomplete.push(employee.reviews.filter((review) => review.complete === false))
   })
+
+  incomplete = incomplete.filter(el => {
+    return el != null;
+  });
 
   const EmployeeWithId = ({match}) => {
     return (
@@ -65,7 +69,7 @@ class MainComponent extends Component {
                                     employees={this.props.employees}
                                     completeReview={this.props.completeReview} 
 
-                                    />}
+                                  />}
                 />
                   <Route
                     exact

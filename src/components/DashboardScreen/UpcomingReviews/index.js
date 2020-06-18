@@ -39,6 +39,7 @@ class ReviewForm extends Component {
 
 		this.state = {
       isModalOpen: false,
+      employeeId: props.employeeId,
       reviewId: props.reviewId,
       name: props.name,
       areas: props.areas,
@@ -106,15 +107,15 @@ class ReviewForm extends Component {
 
 
 	handleSubmit(event) {
-    event.preventDefault();
+   
     console.log('Current state is: ' + JSON.stringify(this.state));
     alert('Current state is: ' + JSON.stringify(this.state));
     
-    // Is below correct?
-    this.props.completeReview(this.state.reviewId, this.state.name, this.state.area1, this.state.area2, this.state.area3, this.state.notes, this.state.complete);
+
+    this.props.completeReview(this.state.employeeId,this.state.reviewId, this.state.name, this.state.area1, this.state.area2, this.state.area3, this.state.notes, this.state.complete);
     
     this.toggleModal();
-		
+    event.preventDefault();
 	}
 
 	render() {
@@ -248,12 +249,13 @@ class ReviewForm extends Component {
 }
 
 function RenderReviewList( props ) {
+  console.log(props.incomplete)
 	let toDisplay = props.incomplete.filter((review) => review.length !== 0);
 	return toDisplay.map((review) => {
 		return (
 			<div
 				style={empRowStyle}
-				key={review[0].id}
+				key={(review[0].id)+'-'+(review[0].employeeId)}
 				className='row pt-2 pb-2 mb-3'
 			>
 				<div className='col-4'>
@@ -262,6 +264,7 @@ function RenderReviewList( props ) {
 				<div className='col-6'>{review[0].name}</div>
 				<div className='col-1'>
 					<ReviewForm 
+            employeeId={review[0].employeeId}
             reviewId={review[0].id}
             name={review[0].name}
             date={review[0].date}

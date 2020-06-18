@@ -6,12 +6,14 @@ export const Employees = (state = EMPLOYEES, action) => {
   switch (action.type) {
     
     case ActionTypes.REVIEW_COMPLETED:
-      //this below step may be un-needed, but does make code slightly more succint overall?
+
+      //copying payload, maybe un-needed, but does make code slightly more succint overall
       const review = action.payload;
-      console.log(`Review from inside reducer ${JSON.stringify(action.payload)}`)
+      console.log(review)
       
       //Make copy of employee whose review has been completed
-      const employee = state[0]
+      const employee = state[review.employeeId]
+      console.log(employee)
       
       //Convert payload into same structure as receiving object 
       const forMerge = {
@@ -27,12 +29,13 @@ export const Employees = (state = EMPLOYEES, action) => {
       }
 
       //merge old review with review info from payload
-      Object.assign(employee.reviews[1], forMerge);
+      Object.assign(employee.reviews[review.reviewId], forMerge);
 
-      state[0] = employee;
+      //re-assign copy of employee (with new review info) into state version of same employee
+      state[review.employeeId] = employee;
       
       return [
-        // needs to be new EMPLOYEES with copy of employee with new review inserted
+
         ...state, 
       ]
     
