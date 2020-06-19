@@ -35,9 +35,13 @@ function ReviewList({employees}) {
   // }
  
   return employees.employees.map((employee) => (
-      employee.reviews.map(review=>(
+      employee.reviews
+      
+      .filter(review => review.complete !== false) 
+
+      .map(review=>(
         <Link 
-          to={`/reviews/${review.id}`} 
+          to={`/reviews/${review.reviewPage}`} 
           employee={employee} 
           key={review.id}>
           <div

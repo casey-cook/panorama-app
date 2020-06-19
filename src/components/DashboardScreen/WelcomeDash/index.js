@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 const windowStyle = {
@@ -18,7 +17,8 @@ const headingStyle = {
 };
 
 const welcomeContent = {
-	backgroundColor: '#d0fdf9',
+  backgroundColor: '#d0fdf9',
+  fontSize: 20,
 	minWidth: 100,
 	minHeight: 80,
 	borderRadius: 6,
@@ -45,7 +45,6 @@ function PastDueReviews({incomplete}) {
 }
 //ABOVE to be exported to its own component
 
-
 class WelcomeDash extends Component {
 	render() {
 		return (
@@ -55,17 +54,11 @@ class WelcomeDash extends Component {
 				</div>
 				<div style={welcomeContent} className='m-3'>
           <div className="container">
-            <div className='row pt-2'>
+            <div className='row py-4'>
               <div className='col-1'>
                 <FontAwesomeIcon icon={faExclamationCircle} style={{ color: '#126872' }} />
               </div>
               <div className='col-9'><PastDueReviews incomplete={this.props.incomplete}/> Past Due</div>
-            </div>
-            <div className='row pt-2'>
-              <div className='col-1'>
-              <FontAwesomeIcon icon={faCalendarAlt} style={{ color: '#126872' }} />
-              </div>
-              <div className='col-9'>1 Review Due This Week</div>
             </div>
           </div>
 				</div>

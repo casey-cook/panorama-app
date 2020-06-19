@@ -24,7 +24,8 @@ export const EMPLOYEES = [
 		reviews: [
 			{
 				employeeId: 0,
-				id: 0,
+        id: 0,
+        reviewPage: 0,
 				name: 'Sandy Jimenez',
 				date: {
 					year: '2019',
@@ -46,7 +47,8 @@ export const EMPLOYEES = [
 			},
 			{
 				employeeId: 0,
-				id: 1,
+        id: 1,
+        reviewPage: 1,
 				name: 'Sandy Jimenez',
 				date: {
 					year: '2020',
@@ -59,16 +61,17 @@ export const EMPLOYEES = [
 					2: 'Cash Handling',
 				},
 				scores: {
-					0: 5,
-					1: 5,
-					2: 4,
+					0: '',
+					1: '',
+					2: '',
 				},
-				notes: `Sandy is doing a wonderful`,
+				notes: `TBD`,
 				complete: false,
 			},
 			{
 				employeeId: 0,
-				id: 2,
+        id: 2,
+        reviewPage: 2,
 				name: 'Sandy Jimenez',
 				date: {
 					year: '2020',
@@ -116,7 +119,8 @@ export const EMPLOYEES = [
 		reviews: [
 			{
 				employeeId: 1,
-				id: 0,
+        id: 0,
+        reviewPage: 3,
 				name: 'Charles Jones',
 				date: {
 					year: '2019',
@@ -138,7 +142,8 @@ export const EMPLOYEES = [
 			},
 			{
 				employeeId: 1,
-				id: 1,
+        id: 1,
+        reviewPage: 4,
 				name: 'Charles Jones',
 				date: {
 					year: '2020',
@@ -160,7 +165,8 @@ export const EMPLOYEES = [
 			},
 			{
 				employeeId: 1,
-				id: 2,
+        id: 2,
+        reviewPage: 5,
 				name: 'Charles Jones',
 				date: {
 					year: '2020',
@@ -207,7 +213,8 @@ export const EMPLOYEES = [
 		reviews: [
 			{
 				employeeId: 2,
-				id: 0,
+        id: 0,
+        reviewPage: 6,
 				name: 'Ashton Reece',
 				date: {
 					year: '2019',
@@ -229,7 +236,8 @@ export const EMPLOYEES = [
 			},
 			{
 				employeeId: 2,
-				id: 1,
+        id: 1,
+        reviewPage: 7,
 				name: 'Ashton Reece',
 				date: {
 					year: '2019',
@@ -251,7 +259,8 @@ export const EMPLOYEES = [
 			},
 			{
 				employeeId: 2,
-				id: 2,
+        id: 2,
+        reviewPage: 8,
 				name: 'Ashton Reece',
 				date: {
 					year: '2020',
@@ -298,7 +307,8 @@ export const EMPLOYEES = [
 		reviews: [
 			{
 				employeeId: 3,
-				id: 0,
+        id: 0,
+        reviewPage: 9,
 				name: 'Vinnie Williams',
 				date: {
 					year: '2019',
@@ -320,7 +330,8 @@ export const EMPLOYEES = [
 			},
 			{
 				employeeId: 3,
-				id: 1,
+        id: 1,
+        reviewPage: 10,
 				name: 'Vinnie Williams',
 				date: {
 					year: '2019',
@@ -342,7 +353,8 @@ export const EMPLOYEES = [
 			},
 			{
 				employeeId: 3,
-				id: 2,
+        id: 2,
+        reviewPage: 11,
 				name: 'Vinnie Williams',
 				date: {
 					year: '2020',

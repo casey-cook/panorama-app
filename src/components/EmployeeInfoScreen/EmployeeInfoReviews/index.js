@@ -44,10 +44,14 @@ function ReviewList(employee) {
   //   e.target.style.color = '#126872';
   // }
 
-  return (employee.employee.reviews.map(review => {
+  return (employee.employee.reviews
+    
+    .filter(review => review.complete !== false) 
+    
+    .map(review => {
     return (
       
-      <Link to={`/reviews/${review.id}`}>
+      <Link to={`/reviews/${review.reviewPage}`}>
         <div 
           style={empRowStyle} 
           className='row pt-2 pb-2 mb-3'

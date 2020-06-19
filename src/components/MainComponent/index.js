@@ -49,7 +49,7 @@ class MainComponent extends Component {
       <ReviewInfo 
         review={
           this.props.employees.map(employee =>{
-          return (employee.reviews.filter(review => review.id === +match.params.reviewId)
+          return (employee.reviews.filter(review => review.reviewPage === +match.params.reviewId)
           )})
         }
       />
