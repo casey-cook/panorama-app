@@ -5,7 +5,7 @@ const windowStyle2 = {
 	maxHeight: 500,
 	backgroundColor: '#81ecc9',
 	maxWidth: 400,
-  minWidth: 400,
+  minWidth: 320,
   borderRadius: 6,
   overflowY:'auto'
 };
@@ -22,7 +22,7 @@ const headingStyle = {
 
 function ReviewsCompletedList(employees) {
   return(
-      <div style={windowStyle2} className='ml-4 mb-4 hideMe'>
+      <div style={windowStyle2} className='ml-2 mb-4 hideMe'>
         <div style={headingStyle}>
           <p className='wHeading p-2 mb-0'>Review Log</p>
         </div>

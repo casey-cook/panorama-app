@@ -6,7 +6,7 @@ const windowStyle = {
 	minHeight: 155,
 	backgroundColor: '#81ecc9',
   maxWidth: 400,
-  minWidth: 400,
+  minWidth: 320,
 	borderRadius: 6,
 };
 
@@ -48,7 +48,7 @@ function PastDueReviews({incomplete}) {
 class WelcomeDash extends Component {
 	render() {
 		return (
-			<div style={windowStyle} className='mt-4 ml-4'>
+			<div style={windowStyle} className='mt-4 ml-2'>
 				<div style={headingStyle}>
 					<p className='wHeading p-2 mb-0'>Welcome back, Casey!</p>
 				</div>

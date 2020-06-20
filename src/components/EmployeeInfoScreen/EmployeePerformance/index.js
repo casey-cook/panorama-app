@@ -5,7 +5,7 @@ const windowStyle3 = {
 	minHeight: 250,
 	backgroundColor: '#81ecc9',
 	maxWidth: 400,
-	minWidth: 400,
+	minWidth: 320,
 	borderRadius: 6,
 };
 
@@ -19,7 +19,7 @@ function EmployeePerformance(employee) {
 
   return (
     
-      <div style={windowStyle3} className='mt-4 ml-4'>
+      <div style={windowStyle3} className='mt-4 ml-2'>
         <div style={headingStyle}>
           <p className='wHeading p-2 mb-0'>Performance Area Detail</p>
         </div>

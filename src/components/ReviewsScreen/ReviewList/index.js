@@ -61,7 +61,7 @@ function ReviewList({employees}) {
           </div>
           <div className='col-5 ml-2 my-auto'>{employee.name}</div>
           <div className='col-3 my-auto'>{review.date.month}/{review.date.day}/{review.date.year}</div>
-          <div style={scoreStyle} className='col-1 ml-4 pl-2 pt-1 my-auto'>{((review.scores[0]+review.scores[1]+review.scores[2])/3).toFixed(1)}</div>
+          {/* <div style={scoreStyle} className='col-1 ml-4 pl-2 pt-1 my-auto'>{((review.scores[0]+review.scores[1]+review.scores[2])/3).toFixed(1)}</div> */}
         </div>
       </Link>
       ))

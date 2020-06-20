@@ -5,7 +5,7 @@ const windowStyle2 = {
 	minHeight: 355,
 	backgroundColor: '#81ecc9',
 	maxWidth: 400,
-	minWidth: 400,
+	minWidth: 320,
 	borderRadius: 6,
 };
 
@@ -19,7 +19,7 @@ const headingStyle = {
 function EmployeeSelect(props) {
 
 	return (
-		<div style={windowStyle2} className='ml-4 mb-4'>
+		<div style={windowStyle2} className='ml-2 mb-4'>
 			<div style={headingStyle}>
 				<p className='wHeading p-2 mb-0'>Employee Select</p>
 			</div>

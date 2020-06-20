@@ -4,7 +4,7 @@ const windowStyle = {
 	minHeight: 155,
 	backgroundColor: '#81ecc9',
 	maxWidth: 400,
-	minWidth: 400,
+	minWidth: 320,
 	borderRadius: 6,
 };
 
@@ -50,7 +50,7 @@ function EmployeeAverage({ employee }) {
 	
 
 	return (
-      <div style={windowStyle} className='m-4'>
+      <div style={windowStyle} className='ml-2 my-4'>
         <div className='container'>
           <div className='row' style={headingStyle1}>
             <div className='col-9'>

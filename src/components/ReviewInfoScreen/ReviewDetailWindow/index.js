@@ -6,7 +6,7 @@ const windowStyle3 = {
 	minHeight: 470,
 	backgroundColor: '#81ecc9',
 	maxWidth: 400,
-	minWidth: 400,
+	minWidth: 320,
 	borderRadius: 6,
 };
 
@@ -21,7 +21,7 @@ function ReviewDetailWindow({review}) {
   console.log('Review, From Review Detail Window:')
   console.log(review)
   return(
-    <div style={windowStyle3} className='mt-4 ml-4'>
+    <div style={windowStyle3} className='mt-4 ml-2'>
     <div style={headingStyle}>
       <p className='wHeading p-2 mb-0'>{review[0][0].name} - {review[0][0].date.month}/{review[0][0].date.day}/{review[0][0].date.year}</p>
     </div>
