@@ -9,14 +9,14 @@ const empRowStyle = {
 	color: '#126872',
 };
 
-const scoreStyle = {
-	borderRadius: '50%',
-	backgroundColor: '#0b877d',
-	minWidth: 25,
-	minHeight: 30,
-	color: 'white',
-  fontSize: '.9em',
-};
+// const scoreStyle = {
+// 	borderRadius: '50%',
+// 	backgroundColor: '#0b877d',
+// 	minWidth: 25,
+// 	minHeight: 30,
+// 	color: 'white',
+//   fontSize: '.9em',
+// };
 
 const imageStyle = {
 	borderRadius: 50,
