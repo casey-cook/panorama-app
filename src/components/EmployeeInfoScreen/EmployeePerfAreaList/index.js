@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 
 const empRowStylePerformance = {
 	backgroundColor: '#d0fdf9',
@@ -21,7 +21,16 @@ const scoreStyle = {
 
 
 function EmployeePerfAreaList({employee}) {
-  console.log(employee)
+// const [employee, setEmployee] = useState(null) 
+useEffect(() => {
+
+  
+  
+  //write functiton for calculating average of each performance area
+
+})
+
+  
   return (
         
         <React.Fragment>

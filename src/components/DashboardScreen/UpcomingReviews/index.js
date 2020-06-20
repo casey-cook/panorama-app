@@ -144,7 +144,7 @@ class ReviewForm extends Component {
 										name='name'
                     placeholder='Employee Full Name'
 										value={this.state.name}
-                    invalid={errors.name}
+                    // invalid={errors.name}
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('name')}
 									/>

@@ -11,18 +11,18 @@ class Dashboard extends Component {
       <React.Fragment>
         <div className='container'>
           <div className="row">
-            <div className="col">
+            <div className="col-xs-12 col-md-6 ">
               <WelcomeDash incomplete={this.props.incomplete} />
             </div>
-            <div className="col">
+            <div className="col-xs-12 col-md-6 ">
               <TeamAverage employees={this.props.employees} />
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-xs-12 col-md-6 ">
               <EmpSnapshot employees={this.props.employees} />
             </div>
-            <div className="col">
+            <div className="col-xs-12 col-md-6 ">
               <UpcomingReviews  incomplete={this.props.incomplete} employees={this.props.employees} completeReview={this.props.completeReview} />
             </div>
           </div>
