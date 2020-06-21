@@ -1,5 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { Button } from 'reactstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const windowStyle = {
 	minHeight: 355,
@@ -36,6 +39,11 @@ const scoreStyle = {
 	color: 'white',
 	fontSize: '.9em',
 };
+
+ const buttonText = {
+   color: '#01403A',
+
+ }
 
 
 
@@ -86,6 +94,18 @@ function EmpSnapshot(props) {
 			<div className='m-3'>
 				<div className='container'>
 					<EmployeeList employees={props.employees} />
+          <div className="row">
+            <div className="col-2">
+            <Button
+               id='addEmployee'
+               className='mr-auto'>
+               <FontAwesomeIcon icon={faPlus} style={{ color: 'white' }} />
+             </Button>
+            </div>
+            <div className="col-10 pt-2">
+              <p className='mr-auto' style={buttonText}>Add an Employee</p>
+            </div>
+          </div>
 				</div>
 			</div>
 		</div>
