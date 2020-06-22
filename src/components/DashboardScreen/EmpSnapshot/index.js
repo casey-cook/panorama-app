@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import { Button } from 'reactstrap';
+import { 
+  Col,
+	Button,
+	Modal,
+	ModalHeader,
+	ModalBody,
+	Label,
+	Form,
+	FormGroup,
+  Input, 
+  FormFeedback
+ } from 'reactstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -40,12 +51,118 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
- const buttonText = {
-   color: '#01403A',
 
- }
+class AddEmployeeForm extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+      name: 'First Last',
+      touched: {
+        name: false,
+      }
+		};
+
+		this.toggleModal = this.toggleModal.bind(this);
+		this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	toggleModal() {
+		this.setState({
+			isModalOpen: !this.state.isModalOpen
+		});
+  }
+
+  validate(name) {
+    const errors = {
+      name: ''
+    }
+
+    if (this.state.touched.name) {
+      if (name.length < 2) {
+        errors.name = 'Name must be at least 2 characters'
+      } else if (name.length > 25) {
+        errors.name = 'Name must be shorter than 25 characters'
+      }
+    }
+
+    return errors;
+
+  }
+  
+  handleBlur = (field) => () => {
+    this.setState({
+      touched: {...this.state.touched, [field]: true}
+    })
+  }
+
+	handleInputChange(event) {
+		const target = event.target;
+		const name = target.name;
+		const value = target.value;
+
+		this.setState({
+			[name]: value,
+		});
+	}
 
 
+	handleSubmit(event) {
+
+    this.props.addEmployee(this.state.name);
+    this.toggleModal();
+    event.preventDefault();
+	}
+
+	render() {
+
+
+    const errors = this.validate(this.state.name)
+
+		return (
+			<div>
+				<Button
+               onClick={this.toggleModal}
+               className='mr-auto pb-2 mb-2 addBtnStyle'>
+               <FontAwesomeIcon icon={faPlus} style={{ color: 'white' }} />
+        </Button>
+				<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+					<ModalHeader toggle={this.toggleModal}>Add an Employee</ModalHeader>
+					<ModalBody>
+						<Form onSubmit={this.handleSubmit}>
+            <FormGroup row>
+								<Label htmlFor='name' md={2}>
+									Name
+								</Label>
+								<Col md={6}>
+									<Input
+										type='text'
+										id='name'
+										name='name'
+                    placeholder='Employee Full Name'
+										value={this.state.name}
+                    invalid={errors.name}
+										onChange={this.handleInputChange}
+                    onBlur={this.handleBlur('name')}
+									/>
+                  <FormFeedback>{errors.name}</FormFeedback>
+								</Col>
+							</FormGroup>
+							<FormGroup row>
+								<Col md={{ size: 10, offset: 8 }}>
+									<Button type='submit' color='success'>
+										Add Employee
+									</Button>
+								</Col>
+							</FormGroup>
+						</Form>
+					</ModalBody>
+				</Modal>
+			</div>
+		);
+	}
+}
 
 function EmployeeList({ employees }) {
 
@@ -94,19 +211,8 @@ function EmpSnapshot(props) {
 			<div className='m-3'>
 				<div className='container'>
 					<EmployeeList employees={props.employees} />
-          <div className="row">
-            <div className="col-2">
-            <Button
-               id='addEmployee'
-               className='mr-auto'>
-               <FontAwesomeIcon icon={faPlus} style={{ color: 'white' }} />
-             </Button>
-            </div>
-            <div className="col-10 pt-2">
-              <p className='mr-auto' style={buttonText}>Add an Employee</p>
-            </div>
-          </div>
 				</div>
+        <AddEmployeeForm addEmployee={props.addEmployee}/>
 			</div>
 		</div>
 	);

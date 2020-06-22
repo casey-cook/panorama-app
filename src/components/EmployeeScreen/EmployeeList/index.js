@@ -29,6 +29,7 @@ function EmployeeList({ employees }) {
   return employees.map((employee) => (
       <Link to={`/employees/${employee.id}`}>
         <div
+          key={employee.id}
           className='row pt-2 pb-2 mb-3'
           style={empRowStyle}
           // onMouseEnter={changeBackground}

@@ -20,7 +20,7 @@ class Dashboard extends Component {
           </div>
           <div className="row">
             <div className="col-xs-12 col-md-6 ">
-              <EmpSnapshot employees={this.props.employees} />
+              <EmpSnapshot employees={this.props.employees} addEmployee={this.props.addEmployee} />
             </div>
             <div className="col-xs-12 col-md-6 ">
               <UpcomingReviews  incomplete={this.props.incomplete} employees={this.props.employees} completeReview={this.props.completeReview} />

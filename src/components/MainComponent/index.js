@@ -11,7 +11,7 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { completeReview } from '../../redux/ActionCreators';
+import { completeReview, addEmployee, delEmployee } from '../../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
@@ -21,7 +21,9 @@ const mapStateToProps = state => {
 
 //handles allowing/making the dispatching of actions available to components
 const mapDispatchToProps = {
-  completeReview: (reviewId, name, area1, area2, area3, notes, complete) => (completeReview(reviewId, name, area1, area2, area3, notes, complete))
+  completeReview: (reviewId, name, area1, area2, area3, notes, complete) => (completeReview(reviewId, name, area1, area2, area3, notes, complete)),
+  addEmployee: (name) => (addEmployee(name)),
+  delEmployee: (name) => (delEmployee(name))
 }
 
 class MainComponent extends Component {
@@ -68,13 +70,14 @@ class MainComponent extends Component {
                                     incomplete={incomplete} 
                                     employees={this.props.employees}
                                     completeReview={this.props.completeReview} 
+                                    addEmployee={this.props.addEmployee}
 
                                   />}
                 />
                   <Route
                     exact
                     path='/employees'
-                    render={() => <Employees employees={this.props.employees} />}
+                    render={() => <Employees employees={this.props.employees} delEmployee={this.props.delEmployee} />}
                   />
                   <Route
                     exact

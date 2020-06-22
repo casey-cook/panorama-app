@@ -1,6 +1,7 @@
 import * as ActionTypes from './ActionTypes';
 
-// defining an action creator function 
+// defining action creator functions
+
 export const completeReview = (employeeId, reviewId, name, area1, area2, area3, notes, complete) => ({
   type: ActionTypes.REVIEW_COMPLETED,
   payload: {
@@ -12,5 +13,19 @@ export const completeReview = (employeeId, reviewId, name, area1, area2, area3, 
     area3: area3,
     notes: notes,
     complete: complete
+  }
+})
+
+export const addEmployee = (name) => ({
+  type: ActionTypes.EMPLOYEE_ADDED,
+  payload: {
+    name: name
+  }
+})
+
+export const delEmployee = (name) => ({
+  type: ActionTypes.EMPLOYEE_REMOVED,
+  payload: {
+    name: name
   }
 })

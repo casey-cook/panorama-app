@@ -10,6 +10,8 @@ import {
 	FormGroup,
 	Input, FormFeedback
 } from 'reactstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const windowStyle = {
 	minHeight: 355,
@@ -107,10 +109,6 @@ class ReviewForm extends Component {
 
 
 	handleSubmit(event) {
-   
-    console.log('Current state is: ' + JSON.stringify(this.state));
-    alert('Current state is: ' + JSON.stringify(this.state));
-    
 
     this.props.completeReview(this.state.employeeId,this.state.reviewId, this.state.name, this.state.area1, this.state.area2, this.state.area3, this.state.notes, this.state.complete);
     
@@ -120,7 +118,6 @@ class ReviewForm extends Component {
 
 	render() {
 
-    console.log()
 
     const errors = this.validate(this.state.name, this.state.notes)
 
@@ -144,7 +141,7 @@ class ReviewForm extends Component {
 										name='name'
                     placeholder='Employee Full Name'
 										value={this.state.name}
-                    // invalid={errors.name}
+                    invalid={errors.name}
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('name')}
 									/>
@@ -287,6 +284,10 @@ function UpcomingReviews(props) {
 				<div className='container'>
 					<RenderReviewList incomplete={props.incomplete} completeReview={props.completeReview} />
 				</div>
+        <Button
+               className='mr-auto addBtnStyle'>
+               <FontAwesomeIcon icon={faPlus} style={{ color: 'white' }} />
+        </Button>
 			</div>
 		</div>
 	);
