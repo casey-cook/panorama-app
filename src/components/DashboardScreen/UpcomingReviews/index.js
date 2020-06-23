@@ -166,26 +166,29 @@ class CreateReviewForm extends Component {
 
 
 function RenderReviewList( props ) {
-
+  console.log('Incomplete: ', props.incomplete)
 	let toDisplay = props.incomplete.filter((review) => review.length !== 0);
-	return toDisplay.map((review) => {
+  console.log('to display', toDisplay)
+  toDisplay = toDisplay.flat(2);
+  console.log('Flattented toDisplay', toDisplay)
+  return toDisplay.map((review) => {
 		return (
 			<div
 				style={empRowStyle}
-				key={(review[0].id)+'-'+(review[0].employeeId)}
+				key={(review.id)+'-'+(review.employeeId)}
 				className='row pt-2 pb-2 mb-3'
 			>
 				<div className='col-4'>
-					{review[0].date.month}/{review[0].date.day}/{review[0].date.year}
+					{review.date.month}/{review.date.day}/{review.date.year}
 				</div>
-				<div className='col-6'>{review[0].name}</div>
+				<div className='col-6'>{review.name}</div>
 				<div className='col-1'>
 					<ReviewForm 
-            employeeId={review[0].employeeId}
-            reviewId={review[0].id}
-            name={review[0].name}
-            date={review[0].date}
-            areas={review[0].areas}
+            employeeId={review.employeeId}
+            reviewId={review.id}
+            name={review.name}
+            date={review.date}
+            areas={review.areas}
             completeReview={props.completeReview}
           />
 				</div>
