@@ -10,6 +10,7 @@ import {
 	FormGroup,
 	Input, FormFeedback
 } from 'reactstrap';
+import ReviewForm  from './ReviewForm/ReviewForm';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -35,24 +36,16 @@ const empRowStyle = {
 	color: '#126872',
 };
 
-class ReviewForm extends Component {
+class CreateReviewForm extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-      isModalOpen: false,
-      employeeId: props.employeeId,
-      reviewId: props.reviewId,
-      name: props.name,
-      areas: props.areas,
-      area1: '',
-      area2: '',
-      area3: '',
-      notes: '',
-      complete: true,
+      name: 'First Last',
+      date: '',
       touched: {
         name: false,
-        notes: false
+        date: false
       }
 		};
 
@@ -67,10 +60,9 @@ class ReviewForm extends Component {
 		});
   }
 
-  validate(name, notes) {
+  validate(name) {
     const errors = {
-      name: '',
-      notes: ''
+      name: ''
     }
 
     if (this.state.touched.name) {
@@ -78,12 +70,6 @@ class ReviewForm extends Component {
         errors.name = 'Name must be at least 2 characters'
       } else if (name.length > 25) {
         errors.name = 'Name must be shorter than 25 characters'
-      }
-    }
-
-    if (this.state.touched.notes) {
-      if (notes.length < 140) {
-        errors.notes = 'Feedback should be at least 140 characters'
       }
     }
 
@@ -110,8 +96,7 @@ class ReviewForm extends Component {
 
 	handleSubmit(event) {
 
-    this.props.completeReview(this.state.employeeId,this.state.reviewId, this.state.name, this.state.area1, this.state.area2, this.state.area3, this.state.notes, this.state.complete);
-    
+    this.props.createReview(this.state.name, this.state.date);
     this.toggleModal();
     event.preventDefault();
 	}
@@ -119,19 +104,21 @@ class ReviewForm extends Component {
 	render() {
 
 
-    const errors = this.validate(this.state.name, this.state.notes)
+    const errors = this.validate(this.state.name)
 
 		return (
 			<div>
-				<Button onClick={this.toggleModal} outline={true} size='sm'>
-					&gt;
-				</Button>
+				<Button
+               onClick={this.toggleModal}
+               className='mr-auto pb-2 mb-2 addBtnStyle'>
+               <FontAwesomeIcon icon={faPlus} style={{ color: 'white' }} />
+        </Button>
 				<Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-					<ModalHeader toggle={this.toggleModal}>Employee Ratings</ModalHeader>
+					<ModalHeader toggle={this.toggleModal}>Schedule a Review</ModalHeader>
 					<ModalBody>
 						<Form onSubmit={this.handleSubmit}>
             <FormGroup row>
-								<Label htmlFor='name' md={2}>
+								<Label htmlFor='name' md={3}>
 									Employee
 								</Label>
 								<Col md={6}>
@@ -139,7 +126,6 @@ class ReviewForm extends Component {
 										type='text'
 										id='name'
 										name='name'
-                    placeholder='Employee Full Name'
 										value={this.state.name}
                     invalid={errors.name}
 										onChange={this.handleInputChange}
@@ -149,91 +135,23 @@ class ReviewForm extends Component {
 								</Col>
 							</FormGroup>
               <FormGroup row>
-								<Label htmlFor='area1' md={2}>
-									{this.state.areas[0]}
-								</Label>
-								<Col md={6}>
-									<Input
-										type='select'
-										id='area1'
-										name='area1'
-										value={this.state.area1}
-										onChange={this.handleInputChange}
-									>
-                    <option hidden='true'>Select...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </Input>
-								</Col>
-							</FormGroup>
-              <FormGroup row>
-								<Label htmlFor='area2' md={2}>
-                {this.state.areas[1]}
-								</Label>
-								<Col md={6}>
-									<Input
-										type='select'
-										id='area2'
-										name='area2'
-										value={this.state.area2}
-										onChange={this.handleInputChange}
-									>
-                    <option hidden='true'>Select...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </Input>
-								</Col>
-							</FormGroup>
-              <FormGroup row>
-								<Label htmlFor='area3' md={2}>
-                {this.state.areas[2]}
-								</Label>
-								<Col md={6}>
-									<Input
-										type='select'
-										id='area3'
-										name='area3'
-										value={this.state.area3}
-										onChange={this.handleInputChange}
-									>
-                    <option hidden='true'>Select...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </Input>
-								</Col>
-							</FormGroup>
-							<FormGroup row>
-								<Label htmlFor='notes' md={2}>
-									Comments
-								</Label>
-								<Col md={10}>
-									<Input
-										type='textarea'
-										id='notes'
-										name='notes'
-										rows='8'
-                    placeholder='Please include observable behaviors that contributed to your ratings.'
-										value={this.state.notes}
-                    invalid={errors.notes}
-										onChange={this.handleInputChange}
-                    onBlur={this.handleBlur('notes')}
-									></Input>
-                  <FormFeedback>{errors.notes}</FormFeedback>
-								</Col>
-							</FormGroup>
+                <Label htmlFor="date" md={3}>
+                  Review Date
+                </Label>
+                <Col md={6}>
+                  <Input
+                    type="date"
+                    name="date"
+                    id="date"
+                    placeholder='Select Date'
+                    onChange={this.handleInputChange}
+                  />
+                </Col>
+              </FormGroup>
 							<FormGroup row>
 								<Col md={{ size: 10, offset: 8 }}>
 									<Button type='submit' color='success'>
-										Submit Review
+										Confirm
 									</Button>
 								</Col>
 							</FormGroup>
@@ -245,8 +163,10 @@ class ReviewForm extends Component {
 	}
 }
 
+
+
 function RenderReviewList( props ) {
-  console.log(props.incomplete)
+
 	let toDisplay = props.incomplete.filter((review) => review.length !== 0);
 	return toDisplay.map((review) => {
 		return (
@@ -282,12 +202,14 @@ function UpcomingReviews(props) {
 			</div>
 			<div className='m-3'>
 				<div className='container'>
-					<RenderReviewList incomplete={props.incomplete} completeReview={props.completeReview} />
+					<RenderReviewList 
+            incomplete={props.incomplete} 
+            completeReview={props.completeReview} 
+          />
 				</div>
-        <Button
-               className='mr-auto addBtnStyle'>
-               <FontAwesomeIcon icon={faPlus} style={{ color: 'white' }} />
-        </Button>
+        <CreateReviewForm 
+          createReview={props.createReview} 
+        />
 			</div>
 		</div>
 	);

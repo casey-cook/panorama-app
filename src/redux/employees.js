@@ -3,6 +3,65 @@ import * as ActionTypes from './ActionTypes';
 
 export const Employees = (state = EMPLOYEES, action) => {
   switch (action.type) {
+
+    //CREATING REVIEW
+    case ActionTypes.REVIEW_CREATED:
+
+      //Step 1 make copy of employee
+      const employeeCopy = state.find(employee => employee.name === action.payload.employeeName)
+
+      //Step 1.5 extract what we need pre-newReview-build
+      const newReviewId = employeeCopy.reviews.length;
+
+      const newPageNumber = (function() {
+        let counter = 0;
+        state.map(employee=>{
+          counter += employee.reviews.length
+          return counter;
+        })
+        return counter;
+      })();
+      
+      const dateSplit = action.payload.date.split('-')
+      const revYear = dateSplit[0]
+      const revMonth = dateSplit[1]
+      const revDay = dateSplit[2]
+
+      //Step 2 build new review
+      const newReview = {
+        employeeId: employeeCopy.id,
+          id: newReviewId,
+          reviewPage: newPageNumber,
+          name: action.payload.employeeName,
+          date: {
+            year: revYear,
+            month: revMonth,
+            day: revDay,
+          },
+          areas: {
+            0: 'Customer Service',
+            1: 'Attendance',
+            2: 'Cash Handling',
+          },
+          scores: {
+            0: '',
+            1: '',
+            2: '',
+          },
+          notes: `This is a placeholder for a newly schedled review.`,
+          complete: false,
+      }
+
+      //Step 3 push review to employee copy
+      employeeCopy.reviews = [...employeeCopy.reviews, newReview]
+
+      //Step 4 re-assign copy of employee (with new review info) into state version of same employee
+      state[employeeCopy.id] = employeeCopy;
+
+      return [
+        ...state
+      ]
+
     
     //COMPLETING REVIEW  
     case ActionTypes.REVIEW_COMPLETED:
@@ -42,21 +101,6 @@ export const Employees = (state = EMPLOYEES, action) => {
 
     const newId = (state.length);
     const newName = action.payload.name;
-    const newMonth = new Date().getMonth() + 1
-    const newDay = new Date().getDate() 
-    const newYear = new Date().getFullYear()
-
-    //IIFE for pageNumber
-    const pageNumber = (function() {
-      let counter = 0;
-      state.map(employee=>{
-        counter += employee.reviews.length
-        return counter;
-      })
-      console.log(`Counter: ${counter}`)
-      return counter;
-      
-    })();
 
     //Building new employee
     const newEmployee = {
@@ -82,29 +126,7 @@ export const Employees = (state = EMPLOYEES, action) => {
         2: 3.0,
       },
       reviews: [
-        {
-          employeeId: newId,
-          id: 0,
-          reviewPage: pageNumber,
-          name: newName,
-          date: {
-            year: newYear,
-            month: newMonth,
-            day: newDay,
-          },
-          areas: {
-            0: 'Customer Service',
-            1: 'Attendance',
-            2: 'Cash Handling',
-          },
-          scores: {
-            0: '',
-            1: '',
-            2: '',
-          },
-          notes: `This is a placeholder review for new employees.`,
-          complete: false,
-        },
+ 
       ],
     };
 
@@ -113,7 +135,7 @@ export const Employees = (state = EMPLOYEES, action) => {
     ]
 
     case ActionTypes.EMPLOYEE_REMOVED:
-        
+
       return [...state.filter(employee => employee.name !== action.payload.name)];
 
     default:

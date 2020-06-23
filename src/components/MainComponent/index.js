@@ -11,7 +11,7 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { completeReview, addEmployee, delEmployee } from '../../redux/ActionCreators';
+import { createReview, completeReview, addEmployee, delEmployee } from '../../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
@@ -23,7 +23,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   completeReview: (reviewId, name, area1, area2, area3, notes, complete) => (completeReview(reviewId, name, area1, area2, area3, notes, complete)),
   addEmployee: (name) => (addEmployee(name)),
-  delEmployee: (name) => (delEmployee(name))
+  delEmployee: (name) => (delEmployee(name)),
+  createReview: (employeeName, date) => (createReview(employeeName, date))
 }
 
 class MainComponent extends Component {
@@ -69,9 +70,9 @@ class MainComponent extends Component {
                     render={() => <Dashboard 
                                     incomplete={incomplete} 
                                     employees={this.props.employees}
+                                    createReview={this.props.createReview}
                                     completeReview={this.props.completeReview} 
                                     addEmployee={this.props.addEmployee}
-
                                   />}
                 />
                   <Route
