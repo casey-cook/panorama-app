@@ -61,16 +61,15 @@ class CreateReviewForm extends Component {
   }
 
   validate(name) {
+    const employees = this.props.employees;
     const errors = {
       name: ''
     }
 
     if (this.state.touched.name) {
-      if (name.length < 2) {
-        errors.name = 'Name must be at least 2 characters'
-      } else if (name.length > 25) {
-        errors.name = 'Name must be shorter than 25 characters'
-      }
+      if (!employees.some(employee => employee.name === name)) {
+        errors.name = 'Must be an exisiting employee'
+      } 
     }
 
     return errors;
@@ -145,12 +144,17 @@ class CreateReviewForm extends Component {
                     id="date"
                     placeholder='Select Date'
                     onChange={this.handleInputChange}
+                    required
                   />
                 </Col>
               </FormGroup>
 							<FormGroup row>
 								<Col md={{ size: 10, offset: 8 }}>
-									<Button type='submit' color='success'>
+									<Button 
+                    type='submit' 
+                    color='success'
+                    disabled={errors.name.length > 0}
+                  >
 										Confirm
 									</Button>
 								</Col>
@@ -190,6 +194,7 @@ function RenderReviewList( props ) {
             date={review.date}
             areas={review.areas}
             completeReview={props.completeReview}
+            employees={props.employees}
           />
 				</div>
 			</div>
@@ -212,6 +217,7 @@ function UpcomingReviews(props) {
 				</div>
         <CreateReviewForm 
           createReview={props.createReview} 
+          employees={props.employees}
         />
 			</div>
 		</div>
