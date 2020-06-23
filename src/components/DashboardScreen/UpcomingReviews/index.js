@@ -170,11 +170,7 @@ class CreateReviewForm extends Component {
 
 
 function RenderReviewList( props ) {
-  console.log('Incomplete: ', props.incomplete)
-	let toDisplay = props.incomplete.filter((review) => review.length !== 0);
-  console.log('to display', toDisplay)
-  toDisplay = toDisplay.flat(2);
-  console.log('Flattented toDisplay', toDisplay)
+	let toDisplay = (props.incomplete.filter((review) => review.length !== 0)).flat(2);
   return toDisplay.map((review) => {
 		return (
 			<div

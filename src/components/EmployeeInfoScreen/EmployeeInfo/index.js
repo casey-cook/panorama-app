@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 import EmployeePerformance from '../EmployeePerformance';
 import EmployeeInfoReviews from '../EmployeeInfoReviews';
 
-
-//TBD
-// 2- Employee Performance - (Do Now)
-// 3- Upcoming Reviews - (Do Later)
-
 function EmployeeInfo(props) {
   return(
     <React.Fragment>
@@ -26,7 +21,7 @@ function EmployeeInfo(props) {
         <div className="row">
           <div className="col">
             <EmployeeeAverage employee={props.employee} />
-            <EmployeeInfoReviews employee={props.employee} />
+            <EmployeeInfoReviews employee={props.employee}/>
           </div>
           <div className="col mb-4">
             <EmployeePerformance employee={props.employee} />

@@ -11,7 +11,6 @@ const reviewNote = {
 };
 
 function ReviewNotes(review) {
-  console.log(review)
   return (
     <div className='row' style={reviewNote}>
       <div className="col-12 pt-2">

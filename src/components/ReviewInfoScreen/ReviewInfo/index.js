@@ -22,7 +22,7 @@ function ReviewInfo(props) {
 
 				<div className='row'>
 					<div className='col'>
-						<ReviewDetailWindow review={review} />
+						<ReviewDetailWindow review={review} deleteReview={props.deleteReview}/>
 					</div>
 				</div>
 			</div>

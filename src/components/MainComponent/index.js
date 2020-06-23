@@ -11,7 +11,7 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { createReview, completeReview, addEmployee, delEmployee } from '../../redux/ActionCreators';
+import { createReview, completeReview, addEmployee, delEmployee, deleteReview } from '../../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
@@ -21,10 +21,12 @@ const mapStateToProps = state => {
 
 //handles allowing/making the dispatching of actions available to components
 const mapDispatchToProps = {
+  createReview: (employeeName, date) => (createReview(employeeName, date)),
   completeReview: (reviewId, name, area1, area2, area3, notes, complete) => (completeReview(reviewId, name, area1, area2, area3, notes, complete)),
+  deleteReview: (review) => (deleteReview(review)),
   addEmployee: (name) => (addEmployee(name)),
   delEmployee: (name) => (delEmployee(name)),
-  createReview: (employeeName, date) => (createReview(employeeName, date))
+  
 }
 
 class MainComponent extends Component {
@@ -55,6 +57,7 @@ class MainComponent extends Component {
           return (employee.reviews.filter(review => review.reviewPage === +match.params.reviewId)
           )})
         }
+        deleteReview={this.props.deleteReview}
       />
     )
   }

@@ -32,31 +32,20 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
+
 function ReviewList(employee) {
-
-  // function changeBackground(e) {
-  //   e.target.style.backgroundColor = '#01403a';
-  //   e.target.style.color = 'white';
-  // }
-
-  // function revertBackground(e) {
-  //   e.target.style.backgroundColor = '#d0fdf9';
-  //   e.target.style.color = '#126872';
-  // }
 
   return (employee.employee.reviews
     
     .filter(review => review.complete !== false) 
-    
     .map(review => {
+
     return (
       
       <Link to={`/reviews/${review.reviewPage}`}>
         <div 
           style={empRowStyle} 
           className='row pt-2 pb-2 mb-3'
-          // onMouseEnter={changeBackground}
-          // onMouseLeave={revertBackground}
         >
           <div className='col-4'>
           {review.date.month}/{review.date.day}/{review.date.year}
@@ -66,19 +55,19 @@ function ReviewList(employee) {
             ((review.scores[0]+review.scores[1]+review.scores[2])/3).toFixed(1)
           }
           </div>
+          
         </div>
+     
       </Link>
-  
+      
     )
-    
   })
-
 )};
     
 
 
-function EmployeeInfoReviews({employee}) {
-  console.log(employee)
+function EmployeeInfoReviews({employee}, props) {
+
 	return (
 		<div style={windowStyleRevHistory} className='ml-2'>
 			<div style={headingStyle}>
@@ -86,7 +75,7 @@ function EmployeeInfoReviews({employee}) {
 			</div>
 			<div className='m-3'>
 				<div className='container'>
-					<ReviewList employee={employee}/>
+					<ReviewList employee={employee} />
 				</div>
 			</div>
 		</div>

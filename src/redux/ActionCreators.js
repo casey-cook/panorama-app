@@ -24,6 +24,13 @@ export const completeReview = (employeeId, reviewId, name, area1, area2, area3, 
   }
 })
 
+export const deleteReview = (review) => ({
+  type: ActionTypes.REVIEW_REMOVED,
+  payload: {
+    review: review
+  }
+})
+
 export const addEmployee = (name) => ({
   type: ActionTypes.EMPLOYEE_ADDED,
   payload: {
