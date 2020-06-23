@@ -112,6 +112,9 @@ export const Employees = (state = EMPLOYEES, action) => {
       ...state, newEmployee
     ]
 
+    case ActionTypes.EMPLOYEE_REMOVED:
+        
+      return [...state.filter(employee => employee.name !== action.payload.name)];
 
     default:
       return state;

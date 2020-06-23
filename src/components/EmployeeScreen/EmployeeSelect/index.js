@@ -8,7 +8,8 @@ import {
 	ModalBody,
 	Label,
 	Form,
-	FormGroup,
+  FormGroup,
+  FormText,
   Input, 
   FormFeedback
  } from 'reactstrap';
@@ -42,10 +43,10 @@ class DelEmployeeForm extends Component {
       }
 		};
 
-    this.delList = this.delList.bind(this);
 		this.toggleModal = this.toggleModal.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.validate = this.validate.bind(this);
   }
 
 	toggleModal() {
@@ -54,14 +55,16 @@ class DelEmployeeForm extends Component {
 		});
   }
 
+
   validate(name) {
+    const employees = this.props.employees;
     const errors = {
       name: ''
     }
 
     if (this.state.touched.name) {
-      if (!name.length) {
-        errors.name = 'Required field'
+      if (!employees.some(employee => employee.name === name)) {
+        errors.name = 'Must be an exisiting employee'
       } 
     }
 
@@ -89,24 +92,13 @@ class DelEmployeeForm extends Component {
 	handleSubmit(event) {
 
     this.props.delEmployee(this.state.name);
-    this.toggleModal();
+    this.toggleModal();  
     event.preventDefault();
+    
   }
   
-  delList() {
-    let options = '';
-    this.props.employees.map(employee=>{
-      
-      options +=  `<option>${employee.name}</option>`
-
-    })
-    console.log(`Options: ${options}`)
-    return options;
-  }
 
 	render() {
-
-    
 
     const errors = this.validate(this.state.name)
 
@@ -123,27 +115,32 @@ class DelEmployeeForm extends Component {
 						<Form onSubmit={this.handleSubmit}>
             <FormGroup row>
 								<Label htmlFor='name' md={4}>
-									Employee Select
+									Employee Name
 								</Label>
 								<Col md={6}>
 									<Input
-										type='select'
+										type='text'
 										id='name'
 										name='name'
-                    placeholder='Select...'
-										value={this.state.name}
                     invalid={errors.name}
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('name')}
 									>
-                  {this.delList()}
                   </Input>
+                  <FormText color="danger">
+                    Deleting an employee is irreversible! Pleast input full name to confirm. 
+                  </FormText>
+                
                   <FormFeedback>{errors.name}</FormFeedback>
 								</Col>
 							</FormGroup>
 							<FormGroup row>
 								<Col md={{ size: 10, offset: 8}}>
-									<Button type='submit' color='danger'>
+									<Button 
+                    type='submit' 
+                    color='danger'
+                    disabled={errors.name.length > 0}
+                  >
 										Delete
 									</Button>
 								</Col>
