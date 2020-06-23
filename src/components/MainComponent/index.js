@@ -87,7 +87,6 @@ class MainComponent extends Component {
                     exact
                     path='/reviews'
                     render={() => <Reviews employees={this.props.employees} />}
-                  
                   />
                   <Route
                     exact
@@ -98,8 +97,8 @@ class MainComponent extends Component {
                     exact
                     path={'/reviews/:reviewId'}
                     component={ReviewWithId}
-                  />
-                  
+                  >
+                  </Route>
                   <Redirect to='/dashboard' />
                 </Switch>
               </CSSTransition>

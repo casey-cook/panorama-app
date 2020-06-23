@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom'; 
 import ReviewDetailList from '../ReviewDetailList';
 import ReviewNotes from '../ReviewNotes';
 import { 
@@ -92,6 +93,7 @@ class DelReviewForm extends Component {
     this.props.deleteReview(this.state.review);
     this.toggleModal();  
     event.preventDefault();
+    this.props.history.push('/dashboard');
     
   }
   
@@ -164,10 +166,10 @@ function ReviewDetailWindow(props) {
         <ReviewDetailList review={review}/>
         <ReviewNotes review={review}/>
       </div>
-      <DelReviewForm deleteReview={props.deleteReview} review={review}/>
+      <DelReviewForm history={props.history} deleteReview={props.deleteReview} review={review}/>
     </div>
   </div>
   )
 }
 
-export default ReviewDetailWindow;
+export default withRouter(ReviewDetailWindow);
