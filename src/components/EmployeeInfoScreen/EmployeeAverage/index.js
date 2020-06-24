@@ -50,7 +50,7 @@ function EmployeeAverage({ employee }) {
 	
 
 	return (
-      <div style={windowStyle} className='ml-2 my-4'>
+      <div style={windowStyle} className='ml-2 mt-4 mb-4'>
         <div className='container'>
           <div className='row' style={headingStyle1}>
             <div className='col-9'>

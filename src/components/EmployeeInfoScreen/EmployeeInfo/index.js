@@ -17,7 +17,8 @@ function EmployeeInfo(props) {
             </Breadcrumb>
           </div>
         </div>
-        
+      </div> 
+      <div className="container"> 
         <div className="row">
           <div className="col">
             <EmployeeeAverage employee={props.employee} />

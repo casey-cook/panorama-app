@@ -53,7 +53,7 @@ function TeamAverage({employees}) {
     let today = moment().format('MMMM Do, YYYY');
     
     return (
-			<div style={windowStyle} className='m-2 mt-4 mb-4'>
+			<div style={windowStyle} className='ml-2 mt-4 mb-4'>
         <div className="container">
           <div className="row" style={headingStyle1}>
             <div className="col-9" >
