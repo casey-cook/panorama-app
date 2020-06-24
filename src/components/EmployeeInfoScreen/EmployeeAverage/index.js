@@ -46,8 +46,7 @@ function EmployeeAverage({ employee }) {
 		  rating = 'Satisfactory';
 		else if  (score > 4)
 		  rating = 'Above Average';
-		else rating = 'Rating Error';
-	
+		else rating = 'No Ratings Yet!';
 
 	return (
       <div style={windowStyle} className='ml-2 mr-1'>

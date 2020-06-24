@@ -9,30 +9,11 @@ const empRowStyle = {
 	color: '#126872',
 };
 
-// const scoreStyle = {
-// 	borderRadius: '50%',
-// 	backgroundColor: '#0b877d',
-// 	minWidth: 25,
-// 	minHeight: 30,
-// 	color: 'white',
-//   fontSize: '.9em',
-// };
-
 const imageStyle = {
 	borderRadius: 50,
 };
 
 function ReviewList({employees}) {
-
-  // function changeBackground(e) {
-  //   e.target.style.backgroundColor = '#01403a';
-  //   e.target.style.color = 'white';
-  // }
-
-  // function revertBackground(e) {
-  //   e.target.style.backgroundColor = '#d0fdf9';
-  //   e.target.style.color = '#126872';
-  // }
  
   return employees.employees.map((employee) => (
       employee.reviews
@@ -47,8 +28,6 @@ function ReviewList({employees}) {
           <div
           className='row pt-2 pb-2 mb-3'
           style={empRowStyle}
-          // onMouseEnter={changeBackground}
-          // onMouseLeave={revertBackground}
           >
           <div className='col-1'>
             <img
@@ -61,7 +40,6 @@ function ReviewList({employees}) {
           </div>
           <div className='col-5 ml-2 my-auto'>{employee.name}</div>
           <div className='col-3 my-auto'>{review.date.month}/{review.date.day}/{review.date.year}</div>
-          {/* <div style={scoreStyle} className='col-1 ml-4 pl-2 pt-1 my-auto'>{((review.scores[0]+review.scores[1]+review.scores[2])/3).toFixed(1)}</div> */}
         </div>
       </Link>
       ))
@@ -69,6 +47,5 @@ function ReviewList({employees}) {
 ));
   
 }
-
 
 export default ReviewList;

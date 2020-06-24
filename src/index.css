@@ -76,3 +76,7 @@
   transition: .3s;
   transition-timing-function: ease-in-out;
 }
+
+.addBtnStyle:focus {
+  background-color: #0b877d;
+}

@@ -42,7 +42,7 @@ function ReviewList(employee) {
 
     return (
       
-      <Link to={`/reviews/${review.reviewPage}`}>
+      <Link to={`/reviews/${review.reviewPage}`} key={review.id}>
         <div 
           style={empRowStyle} 
           className='row pt-2 pb-2 mb-3'
@@ -55,9 +55,7 @@ function ReviewList(employee) {
             ((review.scores[0]+review.scores[1]+review.scores[2])/3).toFixed(1)
           }
           </div>
-          
         </div>
-     
       </Link>
       
     )
@@ -75,7 +73,7 @@ function EmployeeInfoReviews({employee}, props) {
 			</div>
 			<div className='m-3'>
 				<div className='container'>
-					<ReviewList employee={employee} />
+					<ReviewList employee={employee}/>
 				</div>
 			</div>
 		</div>

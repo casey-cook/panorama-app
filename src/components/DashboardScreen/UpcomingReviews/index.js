@@ -126,7 +126,7 @@ class CreateReviewForm extends Component {
 										id='name'
 										name='name'
 										value={this.state.name}
-                    invalid={errors.name}
+                    invalid={errors.name.length > 1}
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('name')}
 									/>

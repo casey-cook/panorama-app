@@ -117,7 +117,7 @@ class ReviewForm extends Component {
 										name='name'
                     placeholder='Employee Full Name'
 										value={this.state.name}
-                    invalid={errors.name}
+                    invalid={errors.name.length > 1}
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('name')}
 									/>
@@ -199,7 +199,7 @@ class ReviewForm extends Component {
 										rows='8'
                     placeholder='Please include observable behaviors that contributed to your ratings.'
 										value={this.state.notes}
-                    invalid={errors.notes}
+                    invalid={errors.notes.length > 1}
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('notes')}
 									></Input>
