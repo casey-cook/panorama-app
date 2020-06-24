@@ -84,7 +84,6 @@ class ReviewForm extends Component {
       }
     }
 
-
     return errors;
   }
   
@@ -99,11 +98,11 @@ class ReviewForm extends Component {
 		const name = target.name;
     const value = target.value;
     
-    this.handleBlur(name);
-
 		this.setState({
 			[name]: value,
-		});
+    });
+    
+    this.handleBlur(name);
 	}
 
 	handleSubmit(event) {

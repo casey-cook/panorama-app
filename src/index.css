@@ -52,7 +52,7 @@
 .page-enter-active {
   opacity: 1;
   transform: translateX(0%);
-  transition: 300ms ease-out;
+  transition: 300ms ease-in;
 }
 
 .page-exit {
@@ -61,7 +61,7 @@
 
 .page-exit-active {
   opacity: 0;
-  transition: ease-in;
+  transition: 300ms ease-in;
 }
 
 .addBtnStyle {
