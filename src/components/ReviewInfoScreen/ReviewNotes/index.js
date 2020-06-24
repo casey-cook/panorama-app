@@ -16,8 +16,7 @@ function ReviewNotes(review) {
       <div className="col-12 pt-2">
         Notes: <br/>
         {review.review.notes}
-      </div>
-      
+      </div> 
     </div>
   )
 }

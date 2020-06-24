@@ -16,7 +16,6 @@ const headingStyle = {
 };
 
 function EmployeePerformance(employee) {
-
   return (
     
       <div style={windowStyle3} className='ml-2 mr-1 mt-4'>

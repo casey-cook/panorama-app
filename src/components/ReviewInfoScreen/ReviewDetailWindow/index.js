@@ -57,7 +57,6 @@ class DelReviewForm extends Component {
 		});
   }
 
-
   validate(name) {
     const errors = {
       name: ''
@@ -87,7 +86,6 @@ class DelReviewForm extends Component {
 		});
 	}
 
-
 	handleSubmit(event) {
     console.log('Handling submit')
     this.props.deleteReview(this.state.review);
@@ -96,7 +94,6 @@ class DelReviewForm extends Component {
     this.props.history.push('/dashboard');
     
   }
-  
 
 	render() {
 
@@ -151,8 +148,6 @@ class DelReviewForm extends Component {
 		);
 	}
 }
-
-
 
 function ReviewDetailWindow(props) {
   const review = props.review[0][0];

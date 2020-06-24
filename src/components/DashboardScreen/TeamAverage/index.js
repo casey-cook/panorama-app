@@ -17,7 +17,6 @@ const headingStyle1 = {
   fontSize: '1.7em',
 };
 
-
 const welcomeContent = {
 	backgroundColor: '#d0fdf9',
 	minWidth: 100,
@@ -49,7 +48,6 @@ function RenderTeamAverage({employees}) {
 
 
 function TeamAverage({employees}) {
-  
     let today = moment().format('MMMM Do, YYYY');
     
     return (

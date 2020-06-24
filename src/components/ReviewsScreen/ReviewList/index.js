@@ -42,8 +42,7 @@ function ReviewList({employees}) {
           <div className='col-3 my-auto'>{review.date.month}/{review.date.day}/{review.date.year}</div>
         </div>
       </Link>
-      ))
-      
+      ))  
 ));
   
 }

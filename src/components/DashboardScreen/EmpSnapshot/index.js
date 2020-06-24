@@ -51,7 +51,6 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
-
 class AddEmployeeForm extends Component {
 	constructor(props) {
 		super(props);
@@ -109,15 +108,12 @@ class AddEmployeeForm extends Component {
 
 
 	handleSubmit(event) {
-
     this.props.addEmployee(this.state.name);
     this.toggleModal();
     event.preventDefault();
 	}
 
 	render() {
-
-
     const errors = this.validate(this.state.name)
 
 		return (
@@ -165,16 +161,6 @@ class AddEmployeeForm extends Component {
 }
 
 function EmployeeList({ employees }) {
-
-	// function changeBackground(e) {
-	// 	e.target.style.backgroundColor = '#01403a';
-	// 	e.target.style.color = 'white';
-	// }
-
-	// function revertBackground(e) {
-	// 	e.target.style.backgroundColor = '#d0fdf9';
-	// 	e.target.style.color = '#126872';
-	// }
 
 	return employees.map((employee) => (
     <Link to={`/employees/${employee.id}`} key={employee.id}>

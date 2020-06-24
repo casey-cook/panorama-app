@@ -41,7 +41,6 @@ function ReviewDetailList({review}){
       <div>{review.scores[1].toFixed(1)}</div>
       </div>
       </div>
-    
 
       <div
         className='row pt-2 pb-2 mb-3 pl-3'

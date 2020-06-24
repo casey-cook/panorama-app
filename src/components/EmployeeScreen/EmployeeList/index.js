@@ -15,16 +15,6 @@ const imageStyle = {
 };
 
 function EmployeeList({ employees }) {
-    
-  // function changeBackground(e) {
-  //   e.target.style.backgroundColor = '#01403a';
-  //   e.target.style.color = 'white';
-  // }
-
-  // function revertBackground(e) {
-  //   e.target.style.backgroundColor = '#d0fdf9';
-  //   e.target.style.color = '#126872';
-  // }
 
   return employees.map((employee) => (
       <Link to={`/employees/${employee.id}`}>
@@ -32,8 +22,6 @@ function EmployeeList({ employees }) {
           key={employee.id}
           className='row pt-2 pb-2 mb-3'
           style={empRowStyle}
-          // onMouseEnter={changeBackground}
-          // onMouseLeave={revertBackground}
         >
           <div className='col-2'>
             <img

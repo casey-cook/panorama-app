@@ -32,7 +32,6 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
-
 function ReviewList(employee) {
 
   return (employee.employee.reviews
@@ -56,8 +55,7 @@ function ReviewList(employee) {
           }
           </div>
         </div>
-      </Link>
-      
+      </Link>  
     )
   })
 )};
@@ -65,7 +63,6 @@ function ReviewList(employee) {
 
 
 function EmployeeInfoReviews({employee}, props) {
-
 	return (
 		<div style={windowStyleRevHistory} className='ml-1 mr-1'>
 			<div style={headingStyle}>
@@ -79,6 +76,5 @@ function EmployeeInfoReviews({employee}, props) {
 		</div>
 	);
 }
-
 
 export default EmployeeInfoReviews;

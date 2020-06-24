@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import EmployeeSelect from '../EmployeeSelect';
 
-
-
-
 class Employees extends Component {
 	render() {
 		return (

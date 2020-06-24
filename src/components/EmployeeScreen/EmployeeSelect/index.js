@@ -30,7 +30,6 @@ const headingStyle = {
 	borderTopRightRadius: 6,
 };
 
-
 class DelEmployeeForm extends Component {
 	constructor(props) {
 		super(props);
@@ -88,7 +87,6 @@ class DelEmployeeForm extends Component {
 		});
 	}
 
-
 	handleSubmit(event) {
 
     this.props.delEmployee(this.state.name);
@@ -97,7 +95,6 @@ class DelEmployeeForm extends Component {
     
   }
   
-
 	render() {
 
     const errors = this.validate(this.state.name)
@@ -153,9 +150,7 @@ class DelEmployeeForm extends Component {
 	}
 }
 
-
 function EmployeeSelect(props) {
-
 	return (
 		<div style={windowStyle2} className='ml-2 mb-4'>
 			<div style={headingStyle}>

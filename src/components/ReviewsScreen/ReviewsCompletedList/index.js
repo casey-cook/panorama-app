@@ -19,10 +19,6 @@ const headingStyle = {
 	borderTopRightRadius: 6,
 };
 
-
-
-
-
 function ReviewsCompletedList(employees) {
   return(
       <div>

@@ -73,7 +73,6 @@ class CreateReviewForm extends Component {
     }
 
     return errors;
-
   }
   
   handleBlur = (field) => () => {
@@ -101,8 +100,6 @@ class CreateReviewForm extends Component {
 	}
 
 	render() {
-
-
     const errors = this.validate(this.state.name)
 
 		return (
@@ -166,8 +163,6 @@ class CreateReviewForm extends Component {
 		);
 	}
 }
-
-
 
 function RenderReviewList( props ) {
 	let toDisplay = (props.incomplete.filter((review) => review.length !== 0)).flat(2);

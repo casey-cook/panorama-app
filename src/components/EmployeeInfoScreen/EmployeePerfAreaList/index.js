@@ -21,16 +21,13 @@ const scoreStyle = {
 
 
 function EmployeePerfAreaList({employee}) {
-// const [employee, setEmployee] = useState(null) 
+ 
 useEffect(() => {
-
-  
   
   //write functiton for calculating average of each performance area
 
 })
 
-  
   return (
         
         <React.Fragment>
