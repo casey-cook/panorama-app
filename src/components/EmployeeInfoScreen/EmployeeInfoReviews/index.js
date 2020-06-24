@@ -69,7 +69,7 @@ function ReviewList(employee) {
 function EmployeeInfoReviews({employee}, props) {
 
 	return (
-		<div style={windowStyleRevHistory} className='ml-3'>
+		<div style={windowStyleRevHistory} className='ml-1 mr-1'>
 			<div style={headingStyle}>
 				<p className='wHeading p-2 mb-0'>Review History</p>
 			</div>

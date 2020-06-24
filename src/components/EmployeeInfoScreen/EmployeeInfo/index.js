@@ -32,7 +32,7 @@ function EmployeeInfo(props) {
               </div>
             </div>
           </div>
-          <div className="col mt-md-2 ml-2 ml-md-0 mr-md-2 mb-4">
+          <div className="col mt-md-2 ml-1 ml-md-0 mr-md-2 mb-4">
             <EmployeeInfoReviews employee={props.employee}/>
           </div>
         </div>  
