@@ -161,7 +161,6 @@ class AddEmployeeForm extends Component {
 
 
 function EmployeeTotalScore({employee}) {
-  console.log(employee)
   let avgScore, counter = 0, arrScores = [], complete = [];
 
     employee.reviews.forEach(review => {

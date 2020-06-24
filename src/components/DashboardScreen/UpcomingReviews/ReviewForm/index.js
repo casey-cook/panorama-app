@@ -157,7 +157,7 @@ class ReviewForm extends Component {
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('area1')}
 									>
-                    <option hidden='true'>Select...</option>
+                    <option hidden={true}>Select...</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -182,7 +182,7 @@ class ReviewForm extends Component {
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('area2')}
 									>
-                    <option hidden='true'>Select...</option>
+                    <option hidden={true}>Select...</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -206,7 +206,7 @@ class ReviewForm extends Component {
 										onChange={this.handleInputChange}
                     onBlur={this.handleBlur('area3')}
 									>
-                    <option hidden='true'>Select...</option>
+                    <option hidden={true}>Select...</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
