@@ -87,7 +87,6 @@ class AddEmployeeForm extends Component {
     }
 
     return errors;
-
   }
   
   handleBlur = (field) => () => {
@@ -160,6 +159,34 @@ class AddEmployeeForm extends Component {
 	}
 }
 
+
+function EmployeeTotalScore({employee}) {
+  console.log(employee)
+  let avgScore, counter = 0, arrScores = [], complete = [];
+
+    employee.reviews.forEach(review => {
+      if (review.complete === true) {
+        complete.push(review)
+    }
+    })
+
+    complete.forEach(review => {
+      let scores = Object.values(review.scores);
+      scores.forEach(score => {
+        counter ++;
+        arrScores.push(score)
+      })
+    })
+
+    avgScore = ((arrScores.reduce((a,c) => a + c, 0))/counter).toFixed(1)
+
+    if (isNaN(avgScore) === true)
+      avgScore = 'tbd'
+
+    return avgScore;
+}
+
+
 function EmployeeList({ employees }) {
 
 	return employees.map((employee) => (
@@ -167,8 +194,6 @@ function EmployeeList({ employees }) {
       <div
         style={empRowStyle}
         className='row pt-2 pb-2 mb-3 hover-button'
-        // onMouseEnter={changeBackground}
-        // onMouseLeave={revertBackground}
       >
         <div className='col-1'>
           <img
@@ -181,7 +206,7 @@ function EmployeeList({ employees }) {
         </div>
         <div className='ml-1 col-9 my-auto'>{employee.name}</div>
         <div style={scoreStyle} className='pl-1 pt-1 col-1'>
-          <div>{employee.totalScore()}</div>
+          <div><EmployeeTotalScore employee={employee}/></div>
         </div>
       </div>
     </Link>

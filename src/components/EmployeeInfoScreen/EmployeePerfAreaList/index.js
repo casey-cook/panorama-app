@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 
 const empRowStylePerformance = {
 	backgroundColor: '#d0fdf9',
@@ -18,51 +18,65 @@ const scoreStyle = {
 	fontSize: '.9em',
 };
 
-
-
 function EmployeePerfAreaList({employee}) {
- 
-useEffect(() => {
-  
-  //write functiton for calculating average of each performance area
+  let counter = 0, area1Scores = [], area2Scores = [], area3Scores = [], complete= [];
 
-})
+  employee.employee.reviews.forEach(review => {
+    if (review.complete === true) {
+      complete.push(review)
+    } 
+  })
+
+  complete.forEach(review => {
+    counter ++;
+    area1Scores.push(review.scores[0]);
+    area2Scores.push(review.scores[1]);
+    area3Scores.push(review.scores[2]);
+  })
+
+  let area1Avg = ((area1Scores.reduce((a,c) => a + c, 0))/counter).toFixed(1)
+  let area2Avg = ((area2Scores.reduce((a,c) => a + c, 0))/counter).toFixed(1)
+  let area3Avg = ((area3Scores.reduce((a,c) => a + c, 0))/counter).toFixed(1)
+
+  if (isNaN(area1Avg) === true)
+      area1Avg = 'tbd'
+  if (isNaN(area2Avg) === true)
+  area2Avg = 'tbd'
+  if (isNaN(area3Avg) === true)
+      area3Avg = 'tbd'
 
   return (
-        
-        <React.Fragment>
-          <div
-            className='row pt-2 pb-2 mb-3 pl-3'
-            style={empRowStylePerformance}
-          >
-          {employee.employee.performanceAreas[0]} 
-          <div style={scoreStyle} className='ml-auto mr-4 pl-1 pt-1 col-1'>
-          <div>{employee.employee.performanceAreaScores[0]}</div>
-          </div>
-          </div>
-        
-          <div
-            className='row pt-2 pb-2 mb-3 pl-3'
-            style={empRowStylePerformance}
-          >
-          {employee.employee.performanceAreas[1]} 
-          <div style={scoreStyle} className='ml-auto mr-4 pl-1 pt-1 col-1'>
-          <div>{employee.employee.performanceAreaScores[1]}</div>
-          </div>
-          </div>
-        
-
-          <div
-            className='row pt-2 pb-2 mb-3 pl-3'
-            style={empRowStylePerformance}
-          >
-          {employee.employee.performanceAreas[2]} 
-          <div style={scoreStyle} className='ml-auto mr-4 pl-1 pt-1 col-1'>
-          <div>{employee.employee.performanceAreaScores[2]}</div>
-          </div>
-          </div>
-        
-        </React.Fragment>
+    <React.Fragment>
+      <div
+        className='row pt-2 pb-2 mb-3 pl-3'
+        style={empRowStylePerformance}
+      >
+        {employee.employee.performanceAreas[0]} 
+        <div style={scoreStyle} className='ml-auto mr-4 pl-1 pt-1 col-1'>
+          <div>{area1Avg}</div>
+        </div>
+      </div>
+    
+      <div
+        className='row pt-2 pb-2 mb-3 pl-3'
+        style={empRowStylePerformance}
+      >
+        {employee.employee.performanceAreas[1]} 
+        <div style={scoreStyle} className='ml-auto mr-4 pl-1 pt-1 col-1'>
+          <div>{area2Avg}</div>
+        </div>
+      </div>
+    
+      <div
+        className='row pt-2 pb-2 mb-3 pl-3'
+        style={empRowStylePerformance}
+      >
+        {employee.employee.performanceAreas[2]} 
+        <div style={scoreStyle} className='ml-auto mr-4 pl-1 pt-1 col-1'>
+          <div>{area3Avg}</div>
+        </div>
+      </div>
+    </React.Fragment>
   );
 }
 

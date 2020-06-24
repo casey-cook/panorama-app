@@ -68,7 +68,6 @@ class DelEmployeeForm extends Component {
     }
 
     return errors;
-
   }
   
   handleBlur = (field) => () => {
@@ -88,7 +87,6 @@ class DelEmployeeForm extends Component {
 	}
 
 	handleSubmit(event) {
-
     this.props.delEmployee(this.state.name);
     this.toggleModal();  
     event.preventDefault();
@@ -96,7 +94,6 @@ class DelEmployeeForm extends Component {
   }
   
 	render() {
-
     const errors = this.validate(this.state.name)
 
 		return (

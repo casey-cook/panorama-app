@@ -38,11 +38,6 @@ function EmployeeInfo(props) {
         </div>  
         
       </div>
-
-        
-        
-     
-      
     </React.Fragment>
   )
 }

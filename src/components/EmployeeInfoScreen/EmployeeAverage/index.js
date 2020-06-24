@@ -36,17 +36,33 @@ const avgStyle = {
 };
 
 function EmployeeAverage({ employee }) {
-	
-  let score = employee.totalScore();
+  let score, counter = 0, arrScores = [], complete = [];
+
+  employee.reviews.forEach(review => {
+    if (review.complete === true) {
+      complete.push(review)
+    } 
+  })
+
+  complete.forEach(review => {
+    let scores = Object.values(review.scores);
+    scores.forEach(score => {
+      counter ++;
+      arrScores.push(score)
+    })
+  })
+
+  score = ((arrScores.reduce((a,c) => a + c, 0))/counter).toFixed(1)
   
 	let rating = '';
-		if (score < 3) 
+    if (score < 3 && score > 0) 
 			rating = 'Needs Improvement';
 		else if  (score > 3 && score < 4)
 		  rating = 'Satisfactory';
 		else if  (score > 4)
 		  rating = 'Above Average';
-		else rating = 'No Ratings Yet!';
+    else 
+      rating = 'No scores yet!';
 
 	return (
       <div style={windowStyle} className='ml-2 mr-1'>
@@ -56,7 +72,7 @@ function EmployeeAverage({ employee }) {
               <p className='wHeading pt-3'>{employee.name}</p>
             </div>
             <div className='col-2 my-2 pt-2' style={avgStyle}>
-              {employee.totalScore()}
+              {score}
             </div>
           </div>
         </div>

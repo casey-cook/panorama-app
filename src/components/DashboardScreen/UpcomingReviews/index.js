@@ -91,7 +91,6 @@ class CreateReviewForm extends Component {
 		});
 	}
 
-
 	handleSubmit(event) {
 
     this.props.createReview(this.state.name, this.state.date);

@@ -36,41 +36,52 @@ const avgStyle = {
   textAlign: 'center'
 }
 
-
-function RenderTeamAverage({employees}) {
-    let total = 0;
-    employees.forEach(employee=> {
-      let adder = (employee.totalScore());
-      total += parseFloat(adder)
-    })
-    return (total / employees.length).toFixed(1);
-    }
-
-
 function TeamAverage({employees}) {
-    let today = moment().format('MMMM Do, YYYY');
     
-    return (
-			<div style={windowStyle} className='ml-2 mt-4 mb-4'>
-        <div className="container">
-          <div className="row" style={headingStyle1}>
-            <div className="col-9" >
-              <p className='wHeading pt-3'>Team Average</p>
-            </div>  
-            <div className="col-2 my-2 pt-2" style={avgStyle}>
-              <RenderTeamAverage employees={employees}/>
-            </div>
+  let avgScore, counter = 0, arrScores = [], complete = [];
+
+  employees.forEach(employee=>{
+    employee.reviews.forEach(review => {
+      if (review.complete === true) {
+        complete.push(review)
+      } 
+    })
+  })
+
+  complete.forEach(review => {
+    let scores = Object.values(review.scores);
+    scores.forEach(score => {
+      counter ++;
+      arrScores.push(score)
+    })
+  })
+
+  avgScore = ((arrScores.reduce((a,c) => a + c, 0))/counter).toFixed(1)
+  
+  let today = moment().format('MMMM Do, YYYY');
+  
+  return (
+    <div style={windowStyle} className='ml-2 mt-4 mb-4'>
+      <div className="container">
+        <div className="row" style={headingStyle1}>
+          <div className="col-9" >
+            <p className='wHeading pt-3'>Team Average</p>
+          </div>  
+          <div className="col-2 my-2 pt-2" style={avgStyle}>
+            {/* <RenderTeamAverage employees={employees}/> */}
+            {avgScore}
           </div>
         </div>
-				<div style={welcomeContent} className='m-3'>
-          <div className="container">
-            <div display='flex' className='row pt-2'>
-              <div className='col'>Today is: {today}</div>
-            </div>
+      </div>
+      <div style={welcomeContent} className='m-3'>
+        <div className="container">
+          <div display='flex' className='row pt-2'>
+            <div className='col'>Today is: {today}</div>
           </div>
-				</div>
-			</div>
-		);
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default TeamAverage;

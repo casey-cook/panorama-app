@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReviewsCompletedList from '../ReviewsCompletedList';
 
-
 class Reviews extends Component {
   
   render() {

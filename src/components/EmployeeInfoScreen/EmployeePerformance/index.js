@@ -17,7 +17,6 @@ const headingStyle = {
 
 function EmployeePerformance(employee) {
   return (
-    
       <div style={windowStyle3} className='ml-2 mr-1 mt-4'>
         <div style={headingStyle}>
           <p className='wHeading p-2 mb-0'>Performance Area Detail</p>
@@ -29,7 +28,6 @@ function EmployeePerformance(employee) {
         </div>
       </div>
   );
-
 }
 
 export default EmployeePerformance;

@@ -82,7 +82,6 @@ class ReviewForm extends Component {
 		});
 	}
 
-
 	handleSubmit(event) {
     this.props.completeReview(this.state.employeeId,this.state.reviewId, this.state.name, this.state.area1, this.state.area2, this.state.area3, this.state.notes, this.state.complete);
     

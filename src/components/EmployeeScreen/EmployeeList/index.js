@@ -15,7 +15,6 @@ const imageStyle = {
 };
 
 function EmployeeList({ employees }) {
-
   return employees.map((employee) => (
       <Link to={`/employees/${employee.id}`}>
         <div

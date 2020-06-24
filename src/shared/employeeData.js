@@ -3,23 +3,10 @@ export const EMPLOYEES = [
 		id: 0,
 		name: 'Sandy Jimenez',
 		photo: 'assets/img/sandyphoto.png',
-		totalScore: function () {
-			return (
-				(this.performanceAreaScores[0] +
-					this.performanceAreaScores[1] +
-					this.performanceAreaScores[2]) /
-				3
-			).toFixed(1);
-		},
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
-		},
-		performanceAreaScores: {
-			0: 4.1,
-			1: 1.5,
-			2: 4.6,
 		},
 		reviews: [
 			{
@@ -98,23 +85,10 @@ export const EMPLOYEES = [
 		id: 1,
 		name: 'Charles Jones',
 		photo: 'assets/img/charlesphoto.png',
-		totalScore: function () {
-			return (
-				(this.performanceAreaScores[0] +
-					this.performanceAreaScores[1] +
-					this.performanceAreaScores[2]) /
-				3
-			).toFixed(1);
-		},
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
-		},
-		performanceAreaScores: {
-			0: 2.2,
-			1: 3.1,
-			2: 4.5,
 		},
 		reviews: [
 			{
@@ -192,23 +166,10 @@ export const EMPLOYEES = [
 		id: 2,
 		name: 'Ashton Reece',
 		photo: 'assets/img/ashtonphoto.png',
-		totalScore: function () {
-			return (
-				(this.performanceAreaScores[0] +
-					this.performanceAreaScores[1] +
-					this.performanceAreaScores[2]) /
-				3
-			).toFixed(1);
-		},
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
-		},
-		performanceAreaScores: {
-			0: 1.2,
-			1: 3.5,
-			2: 3.9,
 		},
 		reviews: [
 			{
@@ -286,23 +247,10 @@ export const EMPLOYEES = [
 		id: 3,
 		name: 'Vinnie Williams',
 		photo: 'assets/img/vinniephoto.png',
-		totalScore: function () {
-			return (
-				(this.performanceAreaScores[0] +
-					this.performanceAreaScores[1] +
-					this.performanceAreaScores[2]) /
-				3
-			).toFixed(1);
-		},
 		performanceAreas: {
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
-		},
-		performanceAreaScores: {
-			0: 3.7,
-			1: 2.5,
-			2: 3.1,
 		},
 		reviews: [
 			{

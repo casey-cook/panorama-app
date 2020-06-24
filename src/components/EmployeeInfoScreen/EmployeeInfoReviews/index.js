@@ -33,14 +33,12 @@ const scoreStyle = {
 };
 
 function ReviewList(employee) {
-
   return (employee.employee.reviews
     
     .filter(review => review.complete !== false) 
     .map(review => {
 
     return (
-      
       <Link to={`/reviews/${review.reviewPage}`} key={review.id}>
         <div 
           style={empRowStyle} 
@@ -60,9 +58,7 @@ function ReviewList(employee) {
   })
 )};
     
-
-
-function EmployeeInfoReviews({employee}, props) {
+function EmployeeInfoReviews({employee}) {
 	return (
 		<div style={windowStyleRevHistory} className='ml-1 mr-1'>
 			<div style={headingStyle}>
