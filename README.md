@@ -1,4 +1,5 @@
-Panorama is an employee performance appraisal tool used for scheduling and rating your team.
+## Panorama 
+### Enterprise-style employee performance appraisal tool used for scheduling and rating your team.
 
 Built using React, Redux, React-Router, & Bootstrap
 
