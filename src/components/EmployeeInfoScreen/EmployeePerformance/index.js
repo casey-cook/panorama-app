@@ -19,7 +19,7 @@ function EmployeePerformance(employee) {
 
   return (
     
-      <div style={windowStyle3} className='mt-4 ml-2'>
+      <div style={windowStyle3} className='mt-4'>
         <div style={headingStyle}>
           <p className='wHeading p-2 mb-0'>Performance Area Detail</p>
         </div>
