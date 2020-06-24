@@ -10,7 +10,7 @@ import {
 	FormGroup,
 	Input, FormFeedback
 } from 'reactstrap';
-import ReviewForm  from './ReviewForm/ReviewForm';
+import ReviewForm  from './ReviewForm';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 

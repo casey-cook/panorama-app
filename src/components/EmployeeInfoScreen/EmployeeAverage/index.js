@@ -53,6 +53,10 @@ function EmployeeAverage({ employee }) {
   })
 
   score = ((arrScores.reduce((a,c) => a + c, 0))/counter).toFixed(1)
+
+  if (isNaN(score) === true) {
+    score = 'tbd';
+  }
   
 	let rating = '';
     if (score < 3 && score > 0) 
