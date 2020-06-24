@@ -60,12 +60,12 @@ function ReviewList(employee) {
     
 function EmployeeInfoReviews({employee}) {
 	return (
-		<div style={windowStyleRevHistory} className='ml-1 mr-1'>
+		<div style={windowStyleRevHistory} className='ml-1 mr-1 pb-2'>
 			<div style={headingStyle}>
 				<p className='wHeading p-2 mb-0'>Review History</p>
 			</div>
 			<div className='m-3'>
-				<div className='container'>
+				<div className='container mb-2'>
 					<ReviewList employee={employee}/>
 				</div>
 			</div>

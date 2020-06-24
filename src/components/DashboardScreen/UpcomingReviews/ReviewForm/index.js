@@ -97,7 +97,9 @@ class ReviewForm extends Component {
 	handleInputChange(event) {
 		const target = event.target;
 		const name = target.name;
-		const value = target.value;
+    const value = target.value;
+    
+    this.handleBlur(name);
 
 		this.setState({
 			[name]: value,
