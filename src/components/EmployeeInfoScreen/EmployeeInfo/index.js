@@ -20,19 +20,19 @@ function EmployeeInfo(props) {
       </div> 
       <div className="container"> 
         <div className="row">
-          <div className="col">
+          <div className="col-12 col-lg-6 mb-4">
             <div className="row">
-              <div className="col ml-2">
+              <div className="col-12">
                 <EmployeeeAverage employee={props.employee} />
               </div>
             </div>
             <div className="row">
-              <div className="col ml-2">
+              <div className="col-12">
                 <EmployeePerformance employee={props.employee} />
               </div>
             </div>
           </div>
-          <div className="col mt-4 mt-md-0 ml-2 ml-md-0 mr-md-2">
+          <div className="col mt-md-2 ml-2 ml-md-0 mr-md-2 mb-4">
             <EmployeeInfoReviews employee={props.employee}/>
           </div>
         </div>  
