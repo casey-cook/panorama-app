@@ -7,7 +7,7 @@ export const EMPLOYEES = [
 			0: 'Customer Service',
 			1: 'Attendance',
 			2: 'Cash Handling',
-		},
+    },
 		reviews: [
 			{
 				employeeId: 0,

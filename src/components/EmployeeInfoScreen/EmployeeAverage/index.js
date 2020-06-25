@@ -58,15 +58,13 @@ function EmployeeAverage({ employee }) {
     score = 'tbd';
   }
   
-	let rating = '';
-    if (score < 3 && score > 0) 
+	let rating = 'No scores yet!';
+    if (score < 3) 
 			rating = 'Needs Improvement';
-		else if  (score > 3 && score < 4)
+		if  (score > 3 && score < 4)
 		  rating = 'Satisfactory';
-		else if  (score > 4)
+		if  (score > 4)
 		  rating = 'Above Average';
-    else 
-      rating = 'No scores yet!';
 
 	return (
       <div style={windowStyle} className='ml-2 mr-1'>
