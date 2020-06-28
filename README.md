@@ -1,5 +1,10 @@
 ## Panorama 
-### Enterprise-style employee performance appraisal tool used for scheduling and rating your team.
+
+### Enterprise-style performance appraisal tool for managing and rating teams.  
+
+[Live Demo](https://panorama-react.netlify.app/dashboard)  
+
+[Video Walkthrough](https://www.youtube.com/watch?v=xR1CZ_J7sKE)
 
 Built using React, Redux, React-Router, & Bootstrap
 
