@@ -16,7 +16,7 @@ Features:
 - Complete Review
 - Delete Review
 
-## Application Schema
+### Application Schema
 
 ![Image of App Tree](https://i.ibb.co/qWBFBrp/AppTree.png)
 
