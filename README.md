@@ -2,7 +2,7 @@
 
 ### Enterprise-style performance appraisal tool for managing and rating teams.  
 
-This project's goal was to create a simplified tool for tracking employee performance. The app gives the user the ability to create a roster of employees, scheudle and complete for reviews for those employees, delete reviews & employees, and view team & individual scores. 
+This project's goal was to create a simplified tool for tracking employee performance. The app gives the user the ability to create a roster of employees, schedule and complete for reviews for those employees, delete reviews & employees, and view team & individual scores. 
 
 [Live Demo](https://panorama-react.netlify.app/dashboard)  
 
