@@ -18,7 +18,7 @@ Features:
 - Complete Review
 - Delete Review
 
-## Screen Shot
+### Screen Shot
 
 ![Image of App Tree](https://i.ibb.co/6nXDKFX/Finished-Dash.jpg)
 
